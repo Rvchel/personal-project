@@ -49,9 +49,18 @@ module.exports = {
         })
     },
 
+    getUser: (req, res) => {
+        if(req.session.user) {
+            res.json(req.session.user)
+        } else {
+            res.status(401).json({error: 'Please log in.'})
+        }
+    },
 
-
-
+    logoutUser: (req, res) => {
+        req.session.destroy()
+        res.status(200).send(req.session)
+    }
 
 
 }

@@ -3,7 +3,7 @@ const express = require('express');
 const massive = require('massive');
 const session = require('express-session');
 const {getProducts} = require('./controllers/productsController');
-const {registerUser, loginUser} = require('./controllers/authController');
+const {registerUser, loginUser, getUser, logoutUser} = require('./controllers/authController');
 
 const app = express();
 
@@ -29,6 +29,9 @@ app.get('/api/products', getProducts);
 //auth endpoints
 app.post('/auth/register', registerUser);
 app.post('/auth/login', loginUser);
+app.post('/auth/user', logoutUser);
+app.get('/auth/user', getUser);
+
 
 
 
