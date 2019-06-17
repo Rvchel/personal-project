@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const massive = require('massive');
 const session = require('express-session');
+const {getProducts} = require('./controllers/productsController');
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(session({
 }))
 
 //endpoints
+app.get('/api/products', getProducts);
 
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db);
