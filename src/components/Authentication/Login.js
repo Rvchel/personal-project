@@ -5,14 +5,32 @@ class Login extends Component {
     constructor() {
         super();
         this.state = {
-
+            username: '',
+            password: ''
         }
-    
-    
-    
-    
-    
+        this.handleUsername = this.handleUsername.bind(this);
+        this.handlePassword = this.handlePassword.bind(this);
+        this.loginUser = this.loginUser.bind(this);
     }
+
+    handleUsername(e) {
+        this.setState({username: e.target.value})
+    }
+
+    handlePassword(e) {
+        this.setState({password: e.target.value})
+    }
+
+    loginUser() {
+        axios.post('/auth/login', {username: this.state.username, password: this.state.password})
+        .then(response => console.log('Login Complete!'))
+    }
+
+
+
+
+
+
     render() {
         return (
             <div>
@@ -22,14 +40,14 @@ class Login extends Component {
                 <div>
 
                     Username:
-                    <input placeholder='Username' />
+                    <input placeholder='Username' onChange={this.handleUsername} />
 
                     Password:
-                    <input placeholder='Password' />
+                    <input placeholder='Password' onChange={this.handlePassword} />
 
                 </div>
 
-                <button>Login</button>
+                <button onClick={this.loginUser}>Login</button>
 
             </div>
         )
