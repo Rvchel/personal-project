@@ -3,6 +3,7 @@ const express = require('express');
 const massive = require('massive');
 const session = require('express-session');
 const {getProducts} = require('./controllers/productsController');
+const {registerUser} = require('./controllers/authController');
 
 const app = express();
 
@@ -19,8 +20,17 @@ app.use(session({
     }
 }))
 
-//endpoints
+
+
+
+//product endpoints
 app.get('/api/products', getProducts);
+
+//auth endpoints
+app.post('/auth/register', registerUser);
+
+
+
 
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db);
