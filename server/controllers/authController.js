@@ -42,6 +42,7 @@ module.exports = {
                             cart: [],
                             total: 0
                         }
+                        console.log("this is session after user",req.session)
                         res.status(200).json(req.session.user)
                     }
                 })

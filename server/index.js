@@ -4,6 +4,7 @@ const massive = require('massive');
 const session = require('express-session');
 const {getProducts} = require('./controllers/productsController');
 const {registerUser, loginUser, getUser, logoutUser} = require('./controllers/authController');
+const {addCart} = require('./controllers/cartController');
 
 const app = express();
 
@@ -26,11 +27,17 @@ app.use(session({
 //product endpoints
 app.get('/api/products', getProducts);
 
+//cart
+app.post('/api/cart/:id', addCart);
+
+
 //auth endpoints
 app.post('/auth/register', registerUser);
 app.post('/auth/login', loginUser);
 app.post('/auth/user', logoutUser);
-app.get('/auth/user', getUser);
+app.get('/auth/user', getUser); ////////////////////////////
+
+
 
 
 

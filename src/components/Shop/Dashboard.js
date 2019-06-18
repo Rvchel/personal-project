@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import Product from './Product';
 import axios from 'axios';
 
@@ -28,6 +29,7 @@ class Dashboard extends Component {
         return (
             <div>
                 <div>Dashboard</div>
+                <Link to='/cart'><button>Cart</button></Link>
 
                 <div>{this.state.products.map((products, index)=> (
 
@@ -36,7 +38,7 @@ class Dashboard extends Component {
                     image={products.image}
                     price={products.price}
                     description={products.description}
-                    />
+                    id={products.id} />
 
                 ))}</div>
 
