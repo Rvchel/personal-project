@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {getUserSession, addItemToCart} from '../../redux/reducer';
+import {addItemToCart} from '../../redux/reducer';
 import axios from 'axios';
 
 class Product extends Component {
@@ -12,13 +12,14 @@ class Product extends Component {
         this.addItemToCartLocal = this.addItemToCartLocal.bind(this);
     }
 
-    // componentDidMount() {
-    //     axios.get(`/api/cart/${this.props.match.params.id}`)
-    //     .then(response => {
-    //         console.log(this.props.match.params.id)
-    //         this.setState({products: response.data})
-    //     })
-    // }
+    addItemToCartLocal() {
+
+        axios.post(`/api/cart/${this.props.id}`).then(res => {
+            // res.data is the updated cart in this case
+            this.props.addItemToCart(res.data);
+        });
+
+    }
 
 
 
@@ -36,21 +37,11 @@ class Product extends Component {
                 <div>Price: {this.props.price}</div>
                 <div>{this.props.description}</div>
 
-                {/* <div><button onClick={this.props.getUserSession}>Add</button></div> */}
                 <div><button onClick={this.addItemToCartLocal}>Add</button></div>
 
 
             </div>
         )
-    }
-
-    addItemToCartLocal() {
-
-        axios.post(`/api/cart/${this.props.id}`).then(res => {
-            // res.data is the updated cart in this case
-            this.props.addItemToCart(res.data);
-        });
-
     }
 }
 
@@ -58,5 +49,5 @@ const mapStateToProps = state => state;
 
 export default connect(
     mapStateToProps, 
-    {getUserSession: getUserSession, addItemToCart: addItemToCart}
+    {addItemToCart: addItemToCart}
 ) (Product);

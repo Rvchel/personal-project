@@ -35,7 +35,7 @@ app.post('/api/cart/:id', addCart);
 app.post('/auth/register', registerUser);
 app.post('/auth/login', loginUser);
 app.post('/auth/user', logoutUser);
-app.get('/auth/user', getUser); ////////////////////////////
+app.get('/auth/user', getUser);
 
 
 
