@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {getUser} from '../../redux/reducer';
+import {getUser, removeFromCart} from '../../redux/reducer';
 
 class Cart extends Component {
     constructor(props) {
@@ -11,8 +11,8 @@ class Cart extends Component {
     }
 
     componentDidMount() {
-        
         this.props.getUser()
+        this.props.removeFromCart()
     }
 
     render() {
@@ -30,17 +30,21 @@ class Cart extends Component {
                             this.props.user.cart.map((item, index) => {
                                 return(
                                     <div key={index}>
+
                                     {item[0].description}
                                     <img src={item[0].image} />
                                     ${item[0].price}
+
+                                    <button onClick={() => this.props.removeFromCart(this.props.id, this.props.price)}>Execute</button>
+
                                     </div>
                                 )
                             })
                         :
-                        //add items to cart
+                        //Add items to cart
                             null
                     :
-                    //please log in
+                    //Please log in
                         null
                     }
                 
@@ -55,5 +59,5 @@ const mapStateToProps = state => state;
 
 export default connect(
     mapStateToProps,
-    {getUser}
+    {getUser, removeFromCart}
 ) (Cart);
