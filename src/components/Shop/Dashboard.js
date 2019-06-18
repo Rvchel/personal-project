@@ -30,6 +30,7 @@ class Dashboard extends Component {
             <div>
                 <div>Dashboard</div>
                 <Link to='/cart'><button>Cart</button></Link>
+                <Link to='/'><button>Home</button></Link>
 
                 <div>{this.state.products.map((products, index)=> (
 

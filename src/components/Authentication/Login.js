@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Redirect} from 'react-router-dom';
 import axios from 'axios';
 
 class Login extends Component {
@@ -6,7 +7,8 @@ class Login extends Component {
         super();
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            redirect: false
         }
         this.handleUsername = this.handleUsername.bind(this);
         this.handlePassword = this.handlePassword.bind(this);
@@ -23,7 +25,8 @@ class Login extends Component {
 
     loginUser() {
         axios.post('/auth/login', {username: this.state.username, password: this.state.password})
-        .then(response => console.log('Login Complete!'))
+        .then((response) => this.setState({redirect: true}))
+        .catch(error => console.log('Login Wrong'))
     }
 
 
@@ -32,6 +35,15 @@ class Login extends Component {
 
 
     render() {
+
+
+        if(this.state.redirect) {
+            console.log('Logged in.')
+            return <Redirect to='/' />
+        }
+
+
+
         return (
             <div>
 

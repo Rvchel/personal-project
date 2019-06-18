@@ -18,7 +18,7 @@ class Home extends Component {
         return (
             <div>
                 Home
-                <Link to='/club'><button>Cat Club</button></Link>
+                <Link to='/club'><button >Cat Club</button></Link>
                 <Link to='/dashboard'><button>Products</button></Link>
             </div>
         )
