@@ -32,12 +32,15 @@ class Cart extends Component {
                                     <div key={index}>
                                     {item[0].description}
                                     <img src={item[0].image} />
+                                    ${item[0].price}
                                     </div>
                                 )
                             })
                         :
+                        //add items to cart
                             null
                     :
+                    //please log in
                         null
                     }
                 

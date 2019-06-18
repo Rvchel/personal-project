@@ -24,7 +24,7 @@ class Product extends Component {
 
                 {/* db info being pulled from front, then map in other component. */}
                 <div><img src={this.props.image} /></div>
-                <div>Price: {this.props.price}</div>
+                <div>Price: ${this.props.price}</div>
                 <div>{this.props.description}</div>
 
                 <div><button onClick={() => this.props.addToCart(this.props.id , this.props.price)}>Add</button></div>
