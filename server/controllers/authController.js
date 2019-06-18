@@ -62,6 +62,4 @@ module.exports = {
         req.session.destroy()
         res.status(200).send(req.session)
     }
-
-
 }

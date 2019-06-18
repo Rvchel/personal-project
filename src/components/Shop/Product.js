@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {addItemToCart} from '../../redux/reducer';
+import {getUser, addToCart} from '../../redux/reducer';
 import axios from 'axios';
 
 class Product extends Component {
@@ -9,27 +9,17 @@ class Product extends Component {
         this.state = {
             products: []
         }
-        this.addItemToCartLocal = this.addItemToCartLocal.bind(this);
-    }
-
-    addItemToCartLocal() {
-
-        axios.post(`/api/cart/${this.props.id}`).then(res => {
-            // res.data is the updated cart in this case
-            this.props.addItemToCart(res.data);
-        });
-
     }
 
 
-
-
+    componentDidMount() {
+        this.props.getUser() 
+    }
 
 
     render() {
+        // console.log(this.props.user)
         return (
-
-            
             <div>
 
                 {/* db info being pulled from front, then map in other component. */}
@@ -37,7 +27,7 @@ class Product extends Component {
                 <div>Price: {this.props.price}</div>
                 <div>{this.props.description}</div>
 
-                <div><button onClick={this.addItemToCartLocal}>Add</button></div>
+                <div><button onClick={() => this.props.addToCart(this.props.id , this.props.price)}>Add</button></div>
 
 
             </div>
@@ -48,6 +38,6 @@ class Product extends Component {
 const mapStateToProps = state => state;
 
 export default connect(
-    mapStateToProps, 
-    {addItemToCart: addItemToCart}
+    mapStateToProps,
+    {getUser: getUser, addToCart: addToCart}
 ) (Product);

@@ -3,15 +3,12 @@ import axios from 'axios';
 const initialState = {
     loading: false,
     user: {}, 
-    userSession: [],
     currentProduct: [],
-    products: [],
-    cart:[]
+    products: []
 }
 
 const GET_USER = 'GET_USER';
-const GET_USER_SESSION = 'GET_USER_SESSION';
-const ADD_ITEM_TO_CART = 'ADD_ITEM_TO_CART';
+const ADD_TO_CART = 'ADD_TO_CART';
 
 export function getUser() {
     return {
@@ -20,21 +17,11 @@ export function getUser() {
     }
 }
 
-export function getUserSession() {
-    const data = axios.get('/auth/user').then(res => {console.log('data', res)}).catch((error) => error)
+export function addToCart(product, price) {
     return {
-        type: GET_USER_SESSION,
-        payload: data
+        type: ADD_TO_CART,
+        payload: axios.post(`/api/cart/${product}`, {price})
     }
-}
-
-export function addItemToCart(updatedCart) {
-    
-    return {
-        type: ADD_ITEM_TO_CART,
-        updatedCart
-    }
-    
 }
 
 export default function reducer(state = initialState, action) {
@@ -53,18 +40,11 @@ export default function reducer(state = initialState, action) {
             loading: true
         }
 
-        case `${GET_USER_SESSION}`:
+        case `${ADD_TO_CART}_FULFILLED`:
         return {
             ...state,
             user: action.payload.data
         }
-        
-        case ADD_ITEM_TO_CART:
-            console.log(action.updatedCart);
-            return {
-                ...state, 
-                cart: action.updatedCart
-            };
 
         default: return state;
     }

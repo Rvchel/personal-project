@@ -1,18 +1,48 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {getUser} from '../../redux/reducer';
 
 class Cart extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
 
-
-    componentDidMount() {
-        console.log("this is  cart",this.props.cart)
+        }
     }
 
-    
+    componentDidMount() {
+        
+        this.props.getUser()
+    }
+
     render() {
+        console.log(this.props.user)
         return (
             <div>
+                {/* pull user object and map over it */}
                 Cart
+
+                <div>
+                    {this.props.user
+                    ?
+                        this.props.user.cart
+                        ?
+                            this.props.user.cart.map((item, index) => {
+                                return(
+                                    <div key={index}>
+                                    {item[0].description}
+                                    <img src={item[0].image} />
+                                    </div>
+                                )
+                            })
+                        :
+                            null
+                    :
+                        null
+                    }
+                
+                </div>
+
             </div>
         )
     }
@@ -21,5 +51,6 @@ class Cart extends Component {
 const mapStateToProps = state => state;
 
 export default connect(
-    mapStateToProps
+    mapStateToProps,
+    {getUser}
 ) (Cart);

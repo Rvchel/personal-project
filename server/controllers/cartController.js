@@ -2,35 +2,20 @@
 
 module.exports = {
 
-    addCart: (req, res) => {
-        console.log("this is addCart Controller")
-        console.log("this is id", req.params);
-
-        let {user} = req.session;
-        console.log(req.session);
+    addToCart: (req, res) => {
+        console.log(req.body)
+        console.log(req.params)
+        
+        const {product} = req.params
+        const {price} = req.body
         const db = req.app.get('db')
-        let id = req.params.id;
 
-        db.getProducts().then(response => {
-            let products = response;   
+        db.getProduct(product).then(response => {
+                let productObject = response;
+                console.log(productObject)
+        req.session.user.cart.push(productObject)
+        req.session.user.total += +price;
+        res.status(200).json(req.session.user)
 
-            const index = user.cart.findIndex(products => products.id == id)
-
-            if(index === -1) {
-                const selectedProduct = products.find(products => products.id == id)
-
-                user.cart.push(selectedProduct)
-                user.total += selectedProduct.price
-            }
-            res.status(200).json(user.cart);
-        });
-        
-        
-    },
-
-
-
-
-
-
+    })}
 }
