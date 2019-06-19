@@ -21,6 +21,7 @@ class Club extends Component {
         return (
             <div>
                 Club Landing
+                <Link to='/'><button>Home</button></Link>
                 <Link to='/login'><button>Login</button></Link>
                 <Link to='/register'><button>Register</button></Link>
                 <button onClick={this.handleLogout}>Logout</button>

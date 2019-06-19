@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Redirect} from 'react-router-dom';
 import axios from 'axios';
 
 class Register extends Component {
@@ -6,7 +7,8 @@ class Register extends Component {
         super();
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            redirect: false
         }
         this.handleUsername = this.handleUsername.bind(this);
         this.handlePassword = this.handlePassword.bind(this);
@@ -26,7 +28,8 @@ class Register extends Component {
 
     registerUser() {
         axios.post('/auth/register', {username: this.state.username, password: this.state.password})
-        .then(response => {console.log(response.data)})
+        .then(() => this.setState({redirect: true}))
+        .catch((error) => {error: console.log('Cant Log In.')})
     }
 
 
@@ -35,6 +38,11 @@ class Register extends Component {
 
 
     render() {
+        if(this.state.redirect) {
+            console.log('working')
+            return <Redirect to='/' />
+        }
+
         return (
             <div>
 

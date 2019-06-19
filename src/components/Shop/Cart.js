@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import {getUser, removeFromCart} from '../../redux/reducer';
 
 class Cart extends Component {
@@ -49,6 +50,8 @@ class Cart extends Component {
                     }
                 
                 </div>
+
+                <Link to='/'><button>Home</button></Link>
 
             </div>
         )
