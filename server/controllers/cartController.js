@@ -24,17 +24,17 @@ module.exports = {
     removeFromCart: (req, res) => {
         // console.log(req.params)
 
-        // const {id} = req.params
-        // const {price} = req.body
-        // const db = req.app.get('db')
+        const {id} = req.params.id
+        const {price} = req.body
+        const db = req.app.get('db')
 
-        // db.deleteProduct(id).then(response => {
-        //     let productObject = response;
-        //     console.log(productObject)
-        //     req.session.user.cart.splice(productObject ,1)
-        //     req.session.user.total -= +price
-        //     res.status(200).json(req.session.user)
-        // })
+        db.deleteProduct(id).then(response => {
+            let productObject = response;
+            console.log(productObject)
+            req.session.user.cart.splice(productObject ,1)
+            req.session.user.total -= +price
+            res.status(200).json(req.session.user)
+        })
 
     }
 }
