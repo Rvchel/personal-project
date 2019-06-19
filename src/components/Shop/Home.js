@@ -24,7 +24,7 @@ class Home extends Component {
 
                 <div id='clubContainer'>
                 <div id='Catz'>Catz</div>
-                <Link to='/club'><button className='homeButton'>Cat Club</button></Link>
+                <Link to='/club'><button id='catClubButton' className='homeButton'>Cat Club</button></Link>
                 </div>
                 
                 <div id='mainButtons'>

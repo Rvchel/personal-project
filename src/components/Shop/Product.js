@@ -20,14 +20,14 @@ class Product extends Component {
     render() {
         // console.log(this.props.user)
         return (
-            <div>
+            <div id='productContainer'>
 
                 {/* db info being pulled from front, then map in other component. */}
                 <div><img className='productImage' src={this.props.image} /></div>
                 <div>Price: ${this.props.price}</div>
                 <div>{this.props.description}</div>
 
-                <div><button onClick={() => this.props.addToCart(this.props.id , this.props.price)}>Add</button></div>
+                <div><button id='addToCart' onClick={() => this.props.addToCart(this.props.id , this.props.price)}>Add To Cart</button></div>
 
 
             </div>

@@ -32,14 +32,25 @@ body {
 }
 
 .homeButton {
-  color: white;
+  color: #5f5959;
   background: transparent;
   border: none;
   font-family: 'PT Sans', sans-serif;
 }
 
+.homeButton:hover {
+  color: white;
+}
+
 #Catz {
   font-size: 50px;
+  border-right: solid #383434 1px;
+  padding-right: 40px;
+}
+
+#catClubButton {
+  margin-left: 10px;
+  margin-top: 20px;
 }
 
 #clubContainer {
@@ -68,7 +79,20 @@ img {
 }
 
 .productImage {
-  max-width: 20vw;
-  max-height: 20vh;
+  max-width: 40vw;
+  max-height: 50vh;
+  margin-bottom: 20px;
+}
+
+#productContainer {
+  color: white;
+  margin-left: 30vw;
+  margin-bottom: 20px;
+}
+
+#addToCart {
+  color: #139cd3;
+  background: transparent;
+  border: none;
 }
 /*# sourceMappingURL=Style.css.map */
