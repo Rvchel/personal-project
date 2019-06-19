@@ -1,0 +1,103 @@
+
+@import './variables';
+
+
+//HOME COMPONENT
+
+//Body of all the website.
+body {
+    background-color: $mainBackgroundColor;
+}
+
+//Carousel with cat pictures in it.
+#carouselContainer {
+    width: 80vw;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+//Bottom border of the carousel on the home page.
+#carouselBorder {
+    border-bottom: solid rgb(56, 52, 52) 1px;
+    padding-bottom: 20px;
+}
+
+//Box that all buttons on home page are on.
+#homeButtonsContainer {
+    height: 20vh;
+    border-bottom: solid rgb(56, 52, 52) 1px;
+    padding-bottom: 20px;
+}
+
+//Buttons that are on the left on home page.
+#mainButtons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 500px;
+    margin-top: 60px;
+    font-family: 'PT Sans', sans-serif;
+
+}
+
+//All buttons that are on the home page
+.homeButton {
+    color: white;
+    background: transparent;
+    border: none;
+    font-family: 'PT Sans', sans-serif;
+}
+
+//Catz text (logo)
+#Catz {
+    font-size: 50px
+}
+
+//Catz and Cat Club box.
+#clubContainer{
+    display: flex;
+    color: white;
+    font-family: 'Pacifico', cursive;
+}
+
+//Friends text near botton.
+#friendText {
+    font-size: 10vh;
+    color: white;
+    margin-top: 50px;
+}
+
+//Images (cat pictures) in carousel.
+img {
+    height: 80vh;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+}
+
+//PRODUCT COMPONENT
+
+//Product images 
+.productImage {
+    max-width: 20vw;
+    max-height: 20vh;
+}
+
+
+// @mixin flex {
+    
+// }
+
+// #homeContainer {
+//     background-color: black;
+//     button {
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-around;
+//         color: white;
+//         background-color: transparent;
+//         border: none;
+//         &: button: hover {
+//             color: aquamarine;
+//         }
+//     }
+// }

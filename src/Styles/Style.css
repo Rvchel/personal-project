@@ -1,0 +1,74 @@
+body {
+  background-color: #1e1e1e;
+}
+
+#carouselContainer {
+  width: 80vw;
+  margin-left: 100px;
+  margin-top: 20px;
+}
+
+#carouselBorder {
+  border-bottom: solid #383434 1px;
+  padding-bottom: 20px;
+}
+
+#homeButtonsContainer {
+  height: 20vh;
+  border-bottom: solid #383434 1px;
+  padding-bottom: 20px;
+}
+
+#mainButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-left: 500px;
+  margin-top: 60px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.homeButton {
+  color: white;
+  background: transparent;
+  border: none;
+  font-family: 'PT Sans', sans-serif;
+}
+
+#Catz {
+  font-size: 50px;
+}
+
+#clubContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  font-family: 'Pacifico', cursive;
+}
+
+#friendText {
+  font-size: 10vh;
+  color: white;
+  margin-top: 50px;
+}
+
+img {
+  height: 80vh;
+  width: 80vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.productImage {
+  max-width: 20vw;
+  max-height: 20vh;
+}
+/*# sourceMappingURL=Style.css.map */
