@@ -1,7 +1,10 @@
 
+//Table used: products
+//sql used: getProducts
 
 module.exports = {
 
+    //Grabs all products from db so I can be able to display them on my dashboard.
     getProducts: (req, res) => {
         const db = req.app.get('db')
 
@@ -12,15 +15,4 @@ module.exports = {
             res.status(500).send(error)
         })
     }
-
-    // getProducts: ( req, res, next ) => {
-    //     const dbInstance = req.app.get('db');
-    
-    //     dbInstance.getProducts()
-    //         .then( products => res.status(200).send( products ) )
-    //         .catch( err => {
-    //         res.status(500).send({errorMessage: "ERROR"});
-    //         console.log(err)
-    //         } );
-    //     }
 }

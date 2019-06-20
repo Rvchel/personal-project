@@ -3,12 +3,7 @@ import axios from 'axios';
 const initialState = {
     loading: false,
     user: {},
-    admin: false, 
-
-    //Not sure if need these yet!?!?!?!?!?!?!
-
-    // currentProduct: [],
-    // products: []
+    admin: false
 }
 
 const GET_USER = 'GET_USER';

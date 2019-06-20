@@ -1,7 +1,13 @@
 
+//Table used: products
+//sql used: getProduct & deleteProduct
 
 module.exports = {
 
+    //Cart is being pulled from the user object in authController.
+    //addToCart & removeFromCart are also in redux.
+
+    //Adding to the users cart with price.
     addToCart: (req, res) => {
         console.log(req.body)
         console.log(req.params)
@@ -20,7 +26,7 @@ module.exports = {
         })
     },
 
-    ///FIX THIS///
+    //Removes product and price from the user cart.
     removeFromCart: (req, res) => {
         // console.log(req.params)
 

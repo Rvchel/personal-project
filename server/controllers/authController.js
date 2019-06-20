@@ -1,5 +1,8 @@
 const bcrypt = require('bcryptjs');
 
+//Table used: users
+//sql used: findUser
+
 module.exports = {
 
     registerUser: (req, res) => {
@@ -25,6 +28,7 @@ module.exports = {
     },
 
 
+    //Logs in user and checks to see if user has already been registered.
     loginUser: (req,res) => {
         const {username, password} = req.body
         const db = req.app.get('db')
@@ -52,6 +56,7 @@ module.exports = {
         })
     },
 
+    //Grabs individual user that is registered.
     getUser: (req, res) => {
         if(req.session.user) {
             res.json(req.session.user)
