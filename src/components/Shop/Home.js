@@ -24,13 +24,14 @@ class Home extends Component {
 
                 <div id='clubContainer'>
                 <div id='Catz'>Catz</div>
-                <Link to='/club'><button id='catClubButton' className='homeButton'>Cat Club</button></Link>
+                <Link to='/club'><button id='catClubButton' className='homeButton'>CAT CLUB</button></Link>
                 </div>
                 
                 <div id='mainButtons'>
-                <Link to='/dashboard'><button className='homeButton'>Products</button></Link>
-                <button className='homeButton'>Breeds</button>
-                <button className='homeButton'>About</button>
+                <Link to='/dashboard'><button className='homeButton'>PRODUCTS</button></Link>
+                <button className='homeButton'>BREEDS</button>
+                <button className='homeButton'>ABOUT</button>
+                <Link to='/gallery'><button className='homeButton'>GALLERY</button></Link>
                 </div>
 
             </div>
@@ -40,7 +41,10 @@ class Home extends Component {
                 </div>
 
                 <div id='friendText'>
-                    Find Your New Best Friend!
+                    FIND YOUR BEST FRIEND AND COMPANION!
+                </div>
+                <div>
+                <Link to='/register'><button id='signUpLink'>Sign up with us now!</button></Link>
                 </div>
 
         </div>

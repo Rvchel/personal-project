@@ -6,6 +6,7 @@ import Login from './components/Authentication/Login';
 import Dashboard from './components/Shop/Dashboard';
 import Home from './components/Shop/Home';
 import Cart from './components/Shop/Cart';
+import Gallery from './components/Shop/Gallery';
 
 export default (
     <Switch>
@@ -15,5 +16,6 @@ export default (
         <Route path={'/login'} component={Login} />
         <Route path={'/dashboard'} component={Dashboard} />
         <Route path={'/cart'} component={Cart}/>
+        <Route path={'/gallery'} component={Gallery} />
     </Switch>
 );

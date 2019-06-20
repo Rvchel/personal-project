@@ -1,2 +1,2 @@
-INSERT INTO users (username, password)
-VALUES ($1, $2)
+INSERT INTO users (username, password, admin)
+VALUES ($1, $2, $3)

@@ -2,7 +2,8 @@ import axios from 'axios';
 
 const initialState = {
     loading: false,
-    user: {}, 
+    user: {},
+    admin: false, 
 
     //Not sure if need these yet!?!?!?!?!?!?!
 

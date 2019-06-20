@@ -32,10 +32,11 @@ body {
 //Buttons that are on the left on home page.
 #mainButtons {
     display: flex;
+    font-size: 13px;
     justify-content: space-evenly;
-    margin-left: 500px;
+    margin-left: 800px;
     margin-top: 60px;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 //All buttons that are on the home page
@@ -43,7 +44,7 @@ body {
     color: rgb(95, 89, 89);
     background: transparent;
     border: none;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     &:hover {
         color: white;
     }
@@ -71,9 +72,24 @@ body {
 
 //Friends text near bottom.
 #friendText {
-    font-size: 10vh;
+    font-size: 7vh;
     color: white;
     margin-top: 50px;
+    font-family: 'NTR', sans-serif;
+}
+
+//Sign up link
+#signUpLink {
+    font-family: 'Poppins', sans-serif;
+    color: rgb(56, 52, 52);
+    background-color: transparent;
+    border: none;
+    font-size: 10px;
+    margin-left: 8px; 
+    &:hover {
+        color: white;
+        border-bottom: solid white 1px;
+    }
 }
 
 //Images (cat pictures) in carousel.

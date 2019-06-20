@@ -8,6 +8,7 @@ class Login extends Component {
         this.state = {
             username: '',
             password: '',
+            user: {},
             redirect: false
         }
         this.handleUsername = this.handleUsername.bind(this);
@@ -22,10 +23,13 @@ class Login extends Component {
     handlePassword(e) {
         this.setState({password: e.target.value})
     }
+    updateUser(user) {
+        this.setState({user})
+    }
 
     loginUser() {
         axios.post('/auth/login', {username: this.state.username, password: this.state.password})
-        .then((response) => this.setState({redirect: true}))
+        .then((response) => {this.setState({redirect: true}); this.updateUser(response.data)})
         .catch(error => console.log('Login Wrong'))
     }
 
@@ -37,9 +41,16 @@ class Login extends Component {
     render() {
 
 
-        if(this.state.redirect) {
-            console.log('Logged in.')
-            return <Redirect to='/' />
+        console.log(this.state.user)
+        // Checking to see if an admin or not.
+        if(this.state.redirect === true && this.state.user.admin === true) {
+            console.log('Logged in admin.')
+            return <Redirect to='/dashboard' />
+        }
+
+        if(this.state.redirect === true && this.state.user.admin === false) {
+            console.log('logged in customer.')
+            return <Redirect to='/'/>
         }
 
 
