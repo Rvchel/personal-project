@@ -38,6 +38,7 @@ module.exports = {
         res.json(pets)
     },
 
+    //NEED TO FIX
     editPet: (req, res) => {
             const {petName, petImg} = req.body
             const index = pets.findIndex(element => {

@@ -38,9 +38,10 @@ class Form extends Component {
         }).then(response => this.updatePet(response.data)).catch(error => console.log(error))
     }
 
-    editPet(e, name, img, edit) {
+    //HAVE TO FIX
+    editPet(e, name, img, toEdit) {
         e.preventDefault()
-        axios.put(`/api/pets/${edit}`, {name: name, img: img})
+        axios.put(`/api/pets/${toEdit}`, {name: name, img: img})
         .then(response => this.updatePet(response.data))
 
     }
@@ -56,6 +57,7 @@ class Form extends Component {
         this.setState({[e.target.name]: e.target.value})
     }
 
+    //HAVE TO FIX
     openEditor(pets) {
         this.setState({editor: !this.state.editor, toEdit: pets}, () => {
             console.log(this.state.toEdit)
@@ -73,6 +75,7 @@ class Form extends Component {
                         <div><img src={pet.petImg} />
                         <h2>{pet.petName}</h2>
                         <button onClick={() => this.deletePet(pet.name)}>Delete</button>
+                        <button onClick={() => this.openEditor(pet.name)}>Edit!</button>
                         </div>
                         :
                         null
@@ -88,6 +91,7 @@ class Form extends Component {
                     <button onClick={e => this.addPet(e, this.state.name, this.state.img)}>Add Pet!</button>
                 </div>
 
+                {/* HAVE TO FIX */}
                 <form>
                     <h3>Edit {this.state.toEdit}</h3>
                     <input name='name' value={this.state.name} onChange={e => {this.handleChange(e)}} />
