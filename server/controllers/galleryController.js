@@ -38,7 +38,9 @@ module.exports = {
         res.json(pets)
     },
 
-    //NEED TO FIX
+    //NEED TO FIX 
+    //REFERENCE DELETE
+    //If petname is present then you will be able to edit otherwise no.
     editPet: (req, res) => {
             const {petName, petImg} = req.body
             const index = pets.findIndex(element => {

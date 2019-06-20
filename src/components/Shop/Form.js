@@ -7,6 +7,7 @@ class Form extends Component {
         this.state = {
             pets: [],
             name: '',
+            newName: '',
             img: '',
             edit: '',
             toEdit: '',
@@ -94,7 +95,7 @@ class Form extends Component {
                 {/* HAVE TO FIX */}
                 <form>
                     <h3>Edit {this.state.toEdit}</h3>
-                    <input name='name' value={this.state.name} onChange={e => {this.handleChange(e)}} />
+                    <input name='name' value={this.state.newName} onChange={e => {this.handleChange(e)}} />
                 <button onClick={e => this.editPet(e, this.state.name, this.state.img, this.state.toEdit)}>Submit!</button>
                 </form>
 
