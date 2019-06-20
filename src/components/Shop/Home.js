@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Example from './Example';
+import Example from '../../Styles/reactstrap/Example';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import '../../Styles/Style.css'

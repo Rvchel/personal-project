@@ -5,6 +5,7 @@ const session = require('express-session');
 const {getProducts} = require('./controllers/productsController');
 const {registerUser, loginUser, getUser, logoutUser} = require('./controllers/authController');
 const {addToCart, removeFromCart} = require('./controllers/cartController');
+const {addPet, getPet, deletePet, editPet} = require('./controllers/galleryController');
 
 const app = express();
 
@@ -37,6 +38,12 @@ app.post('/auth/register', registerUser);
 app.post('/auth/login', loginUser);
 app.post('/auth/user', logoutUser);
 app.get('/auth/user', getUser);
+
+//pet endpoints
+app.post('/api/pets', addPet);
+app.get('/api/pets', getPet);
+app.delete('/api/pets/:pet', deletePet);
+app.put('/api/pet/:name', editPet);
 
 
 

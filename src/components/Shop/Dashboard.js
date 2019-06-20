@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import Cards from '../../Styles/reactstrap/Cards';
+import Form from './Form';
 import Product from './Product';
 import axios from 'axios';
 
@@ -29,6 +31,7 @@ class Dashboard extends Component {
         console.log(this.state.products)
         return (
             <div>
+
                 <div>Dashboard</div>
                 <Link to='/cart'><button>Cart</button></Link>
                 <Link to='/'><button>Home</button></Link>
@@ -43,6 +46,9 @@ class Dashboard extends Component {
                     id={products.id} />
 
                 ))}</div>
+
+                {/* Might add form for new products? */}
+                {/* <Form /> */}
 
             </div>
         )
