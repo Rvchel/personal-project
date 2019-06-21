@@ -17,6 +17,7 @@ const pets = [
         petImg: 'https://scontent-sjc3-1.cdninstagram.com/vp/e056b5c5db81fedbbb084e71db9d5f8f/5DC34FBD/t51.2885-15/fr/e15/s1080x1080/53355977_294102991283141_552910091255451140_n.jpg?_nc_ht=scontent-sjc3-1.cdninstagram.com&ig_cache_key=MjAwNDU3MzI0NTc3MjM0NDQyMA%3D%3D.2'
     }
 ]
+
 module.exports = {
 
     addPet: (req, res) => {

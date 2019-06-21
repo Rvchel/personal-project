@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom';
 import axios from 'axios';
 
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+
 class Login extends Component {
     constructor() {
         super();
@@ -58,19 +60,24 @@ class Login extends Component {
         return (
             <div>
 
-                <div>Welcome Back!</div>
+                <div
+                style={{ color: 'white',
+                        fontSize: 30,
+                        marginLeft: 400}}>
+                Welcome Back!</div>
 
-                <div>
-
-                    Username:
-                    <input placeholder='Username' onChange={this.handleUsername} />
-
-                    Password:
-                    <input placeholder='Password' type='password' onChange={this.handlePassword} />
-
-                </div>
-
-                <button onClick={this.loginUser}>Login</button>
+<Form inline style={{marginLeft: 250,
+            marginTop: 200}}>
+            <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+            <Label for="exampleEmail" className="mr-sm-2">Email</Label>
+            <Input type="Username" name="Username" id="exampleEmail" placeholder="Username" onChange={this.handleUsername}  />
+            </FormGroup>
+            <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+            <Label for="examplePassword" className="mr-sm-2">Password</Label>
+            <Input type="password" name="password" id="examplePassword" placeholder="Password" onChange={this.handlePassword} />
+            </FormGroup>
+            <Button onClick={this.loginUser}>Login</Button>
+        </Form>
 
             </div>
         )

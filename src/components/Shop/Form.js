@@ -34,11 +34,11 @@
 
         addPet(e, name, img) {
             e.preventDefault()
-            axios.post('api/pets/', {
+            axios.post('api/pets', {
                 name: '',
                 img: ''
             }).then(response => this.updatePet(response.data)).catch(error => console.log(error))
-        }
+        } 
 
         editPet(e, index) {
             e.preventDefault()
