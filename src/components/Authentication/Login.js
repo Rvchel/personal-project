@@ -80,14 +80,21 @@ class Login extends Component {
             <Button onClick={this.loginUser}>Login</Button>
         </Form>
 
-                <Link to='/register'><button style={{
+                {/* <Link to='/register'><button className='blah' style={{
                     color: 'white',
                     backgroundColor: 'transparent',
                     border: 'none',
                     marginLeft: 450,
                     marginTop: 20,
                     fontFamily: 'Poppins, sans-serif'
-                }}>Not a User Yet?</button></Link>
+                }}>Not a User Yet?</button></Link> */}
+
+                <Link to='/register'><Button outline color="secondary" style={{
+                    marginLeft: 450,
+                    marginTop: 50,
+                    fontFamily: 'Poppins, sans-serif',
+                    
+                }}>New User?</Button>{' '}</Link>
 
             </div>
         )

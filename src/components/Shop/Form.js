@@ -1,4 +1,5 @@
     import React, {Component} from 'react';
+    import { Card, Button, CardTitle, CardText } from 'reactstrap';
     import axios from 'axios';
 
     class Form extends Component {
@@ -81,7 +82,12 @@
 
                     {this.state.pets.map((pet, index) => (
                         this.state.pets.length ?
-                            <div><img src={pet.petImg} />
+                        <Card style={{width: 400,
+                                    height: 400,
+                                    marginBottom: 30}}>
+                            <div><img src={pet.petImg} style={{width: 200,
+                                                                height: 200,
+                                                                marginBottom: 30}} />
                             <h2>{pet.petName}</h2>
                             <button onClick={() => this.deletePet(index)}>Delete</button>
                             <button onClick={() => this.openEditor(index)}>Edit!</button>
@@ -97,7 +103,7 @@
                                 null
                             }
                             
-                            </div>
+                            </div> </Card>
                             :
                             null
                     ))}
@@ -111,6 +117,14 @@
 
                         <button onClick={e => this.addPet(e, this.state.name, this.state.img)}>Add Pet!</button>
                     </div>
+
+
+
+                    {/* <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
+                        <CardTitle>Special Title Treatment</CardTitle>
+                        <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                        <Button>Button</Button>
+                    </Card> */}
 
 
                 </div>
