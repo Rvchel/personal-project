@@ -31,6 +31,7 @@ class Home extends Component {
                 <Link to='/dashboard'><button className='homeButton'>PRODUCTS</button></Link>
                 <button className='homeButton'>BREEDS</button>
                 <button className='homeButton'>ABOUT</button>
+                {/* Might need to change link back to gallery */}
                 <Link to='/gallery'><button className='homeButton'>GALLERY</button></Link>
                 </div>
 

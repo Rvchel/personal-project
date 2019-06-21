@@ -1,0 +1,1 @@
+SELECT * FROM cats WHERE id = $1

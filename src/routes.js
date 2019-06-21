@@ -7,6 +7,7 @@ import Dashboard from './components/Shop/Dashboard';
 import Home from './components/Shop/Home';
 import Cart from './components/Shop/Cart';
 import Gallery from './components/Shop/Gallery';
+import Form from './components/Shop/Form';
 
 export default (
     <Switch>
@@ -17,5 +18,7 @@ export default (
         <Route path={'/dashboard'} component={Dashboard} />
         <Route path={'/cart'} component={Cart}/>
         <Route path={'/gallery'} component={Gallery} />
+        <Route exact path="/form" component={Form} />
+        <Route path="/edit/:id" component={Form} />
     </Switch>
 );

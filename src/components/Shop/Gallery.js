@@ -11,21 +11,12 @@ class Gallery extends Component {
         }
     }
 
-    // componentDidMount() {
-    //     axios.get('/api/pets').then(response => {
-    //         this.setState({pets: response.data})
-    //     })
-    // }
-
     render() {
-        // console.log(this.state.pets[0])
-        console.log(this.state.pets)
-        console.log(this.state.pets.petImg)
         return (
 
             <div>
                 <Link to='/'><button>Home</button></Link>
-
+                
                 <div>
                     
                 </div>

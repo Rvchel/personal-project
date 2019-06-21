@@ -32,26 +32,67 @@ module.exports = {
 
     deletePet: (req, res) => {
         console.log('hit that')
-        const index = pets.findIndex(pet => pet.petName === req.params.pet)
-        console.log(index)
-        pets.splice(index, 1)
-        res.json(pets)
+        // const index = pets.findIndex(pet => pet.petName === req.params.pet)
+        // console.log(index)
+        pets.splice(req.params.pet, 1)
+        res.json(pets) 
     },
 
     //NEED TO FIX 
     //REFERENCE DELETE
     //If petname is present then you will be able to edit otherwise no.
     editPet: (req, res) => {
-            const {petName, petImg} = req.body
+            const {petName, petImg, id} = req.body
             const index = pets.findIndex(element => {
-                return element.name === req.params.name
+                return element.id === id
             })
-            if(petName !== '') {
-                pets[index].petName = petName
-            }
-            if(petImg !== '') {
-                pets[index].petImg = petImg
-            }
-            res.json(pets)
+            pets.splice(index, 1, req.body)
+            res.status(200).json(pets)
         }
 }
+
+// module.exports = {
+//     getAllCats: (req, res) => {
+//         const db = req.app.get('db')
+
+//         db.getCats()
+//         .then(response => res.status(200).json(response))
+//         .catch(error => console.log(error))
+//     },
+
+//     createNewCat: (req, res) => {
+//         const db = req.app.get('db')
+//         const {catName, img} = req.body
+
+//         db.createCat(catName, img)
+//         .then(response => res.status(200).json(response))
+//         .catch(error => console.log(error))
+//     },
+
+//     deleteOneCat: (req, res) => {
+//         const db = req.app.get('db')
+//         const {id} = req.params
+
+//         db.deleteCat(id)
+//         .then(() => res.status(200))
+//         .catch(error => console.log(error))
+//     },
+
+//     updateOneCat: (req, res) => {
+//         const db = req.app.get('db')
+//         const {catName, img} = req.body
+
+//         db.updateCat(catName, img)
+//         .then(response => res.status(200).json(response))
+//         .catch(error => console.log(error))
+//     },
+
+//     getOneCat: (req, res) => {
+//         const db = req.app.get('db')
+//         const {id} = req.params
+
+//         db.getCat(id)
+//         .then(response => res.status(200).json(response))
+//         .catch(error => console.log(error))
+//     }
+// }
