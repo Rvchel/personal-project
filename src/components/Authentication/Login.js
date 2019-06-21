@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Redirect} from 'react-router-dom';
+import {Redirect, Link} from 'react-router-dom';
 import axios from 'axios';
 
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
@@ -63,7 +63,8 @@ class Login extends Component {
                 <div
                 style={{ color: 'white',
                         fontSize: 30,
-                        marginLeft: 400}}>
+                        marginLeft: 400,
+                        fontFamily: 'Poppins, sans-serif'}}>
                 Welcome Back!</div>
 
 <Form inline style={{marginLeft: 250,
@@ -78,6 +79,15 @@ class Login extends Component {
             </FormGroup>
             <Button onClick={this.loginUser}>Login</Button>
         </Form>
+
+                <Link to='/register'><button style={{
+                    color: 'white',
+                    backgroundColor: 'transparent',
+                    border: 'none',
+                    marginLeft: 450,
+                    marginTop: 20,
+                    fontFamily: 'Poppins, sans-serif'
+                }}>Not a User Yet?</button></Link>
 
             </div>
         )
