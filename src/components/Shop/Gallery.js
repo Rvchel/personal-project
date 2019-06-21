@@ -7,22 +7,20 @@ class Gallery extends Component {
     constructor() {
         super();
         this.state = {
-            pets: []
+            pets: [],
         }
     }
 
+
     render() {
+        console.log(this.state)
         return (
 
             <div>
                 <Link to='/'><button>Home</button></Link>
                 
                 <div>
-                    
-                </div>
                 
-                <div>
-                <button>Edit</button>
                 </div>
 
                 <Form />

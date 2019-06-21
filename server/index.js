@@ -40,11 +40,6 @@ app.post('/auth/user', logoutUser);
 app.get('/auth/user', getUser);
 
 //cat endpoints
-// app.post('/api/cats', updateOneCat);
-// app.get('/api/cats', getAllCats);
-// app.put('/api/cats', createNewCat);
-// app.delete('/api/cats/:id', deleteOneCat);
-// app.get('/api/cats/:id', getOneCat);
 app.post('/api/pets', addPet);
 app.get('/api/pets', getPet);
 app.delete('/api/pets/:pet', deletePet);

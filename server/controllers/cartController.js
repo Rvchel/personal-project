@@ -1,7 +1,4 @@
 
-//Table used: products
-//sql used: getProduct & deleteProduct
-
 module.exports = {
 
     //Cart is being pulled from the user object in authController.

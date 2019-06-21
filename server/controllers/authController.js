@@ -1,8 +1,5 @@
 const bcrypt = require('bcryptjs');
 
-//Table used: users
-//sql used: findUser
-
 module.exports = {
 
     registerUser: (req, res) => {

@@ -1,7 +1,4 @@
 
-//Table used: products
-//sql used: getProducts
-
 module.exports = {
 
     //Grabs all products from db so I can be able to display them on my dashboard.

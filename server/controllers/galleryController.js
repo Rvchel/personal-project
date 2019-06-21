@@ -38,9 +38,6 @@ module.exports = {
         res.json(pets) 
     },
 
-    //NEED TO FIX 
-    //REFERENCE DELETE
-    //If petname is present then you will be able to edit otherwise no.
     editPet: (req, res) => {
             const {petName, petImg, id} = req.body
             const index = pets.findIndex(element => {
@@ -50,6 +47,16 @@ module.exports = {
             res.status(200).json(pets)
         }
 }
+
+
+
+
+
+
+
+
+
+
 
 // module.exports = {
 //     getAllCats: (req, res) => {

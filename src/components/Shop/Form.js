@@ -40,7 +40,6 @@
             }).then(response => this.updatePet(response.data)).catch(error => console.log(error))
         }
 
-        ///HAVE TO FIX/
         editPet(e, index) {
             e.preventDefault()
             const {pets} = this.state
@@ -64,7 +63,10 @@
             this.setState({pets: tempPets})
         }
 
-        ///HAVE TO FIX/
+        createHandleChange(e) {
+            this.setState({[e.target.name]: e.target.value})
+        }
+
         openEditor(index) {
             this.setState({editorOpen: !this.state.editorOpen, editorIndex: index}, () => {
                 console.log(this.state.toEdit)
@@ -102,20 +104,14 @@
 
                     <div>
                         Pet name:
-                        <input name='name' value={this.state.name} onChange={e => this.handleChange(e)} />
+                        <input name='name' value={this.state.name} onChange={e => this.createHandleChange(e)} />
 
                         Pet Image: 
-                        <input name='img' value={this.state.img} onChange={(e) => this.handleChange(e)} />
+                        <input name='img' value={this.state.img} onChange={e => this.createHandleChange(e)} />
 
                         <button onClick={e => this.addPet(e, this.state.name, this.state.img)}>Add Pet!</button>
                     </div>
 
-                    {/* HAVE TO FIX */}
-                    {/* <form>
-                        <h3>Edit {this.state.toEdit}</h3>
-                        <input name='name' value={this.state.newName} onChange={e => {this.handleChange(e)}} />
-                    <button onClick={e => this.editPet(e, this.state.name, this.state.img, this.state.toEdit)}>Submit!</button>
-                    </form> */}
 
                 </div>
             )
