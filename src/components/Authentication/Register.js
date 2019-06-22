@@ -55,24 +55,8 @@ class Register extends Component {
         return (
             <div>
 
-                {/* <h3>Create an Account</h3>
-
-                <div>
-
-                Username:
-                <input placeholder='Username' onChange={this.handleUsername} />
-
-                Password:
-                <input placeholder='Password' onChange={this.handlePassword} />
-
-                </div>
-
-                <button onClick={this.registerUser}>Register</button> */}
-
-
-
         <div>
-            <Button style={{fontFamily: 'Poppins, sans-serif', marginRight: 90, marginLeft: 90}}color="secondary" onClick={this.toggle}>Register{this.props.buttonLabel}</Button>{' '}
+            <Button style={{fontFamily: 'Poppins, sans-serif', marginRight: 90, marginLeft: 90}}outline color="light" onClick={this.toggle}>Register{this.props.buttonLabel}</Button>{' '}
             <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
             <ModalHeader style={{fontFamily: 'Poppins, sans-serif'}} toggle={this.toggle}>Create Account</ModalHeader>
             <ModalBody>
