@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Redirect} from 'react-router-dom';
+import {Redirect, Link} from 'react-router-dom';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import axios from 'axios';
 
 class Register extends Component {
@@ -8,11 +9,13 @@ class Register extends Component {
         this.state = {
             username: '',
             password: '',
-            redirect: false
+            redirect: false,
+            modal: false
         }
         this.handleUsername = this.handleUsername.bind(this);
         this.handlePassword = this.handlePassword.bind(this);
         this.registerUser = this.registerUser.bind(this);
+        this.toggle = this.toggle.bind(this);
     }
 
 
@@ -32,6 +35,12 @@ class Register extends Component {
         .catch((error) => {error: console.log('Cant Log In.')})
     }
 
+        toggle() {
+            this.setState(prevState => ({
+            modal: !prevState.modal
+            }));
+        }
+
 
 
 
@@ -46,7 +55,7 @@ class Register extends Component {
         return (
             <div>
 
-                <h3>Create an Account</h3>
+                {/* <h3>Create an Account</h3>
 
                 <div>
 
@@ -58,7 +67,28 @@ class Register extends Component {
 
                 </div>
 
-                <button onClick={this.registerUser}>Register</button>
+                <button onClick={this.registerUser}>Register</button> */}
+
+
+
+        <div>
+            <Button style={{fontFamily: 'Poppins, sans-serif', marginRight: 90, marginLeft: 90}}color="secondary" onClick={this.toggle}>Register{this.props.buttonLabel}</Button>{' '}
+            <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+            <ModalHeader style={{fontFamily: 'Poppins, sans-serif'}} toggle={this.toggle}>Create Account</ModalHeader>
+            <ModalBody>
+            <div style={{marginLeft: 150}}>
+                <div style={{display: 'flex', marginBottom: 50}}>
+                <input style={{fontFamily: 'Poppins, sans-serif'}} placeholder='Username' onChange={this.handleUsername} /></div>
+                <div><input style={{fontFamily: 'Poppins, sans-serif'}} placeholder='Password' onChange={this.handlePassword} /></div>
+                <div><Link to='/login'><Button style={{fontFamily: 'Poppins, sans-serif'}} color="link">Already a User?</Button></Link></div>
+            </div>
+            </ModalBody>
+            <ModalFooter>
+                <Button style={{fontFamily: 'Poppins, sans-serif'}}  color="secondary" onClick={this.toggle} onClick={this.registerUser}>Register</Button>{' '}
+                <Button style={{fontFamily: 'Poppins, sans-serif'}} color="danger" onClick={this.toggle}>Cancel</Button>
+            </ModalFooter>
+            </Modal>
+        </div>
 
             </div>
         )

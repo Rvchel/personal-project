@@ -1,5 +1,6 @@
     import React, {Component} from 'react';
-    import { Card, Button, CardTitle, CardText } from 'reactstrap';
+    import { Card, Button, CardImg, CardTitle, CardText, CardDeck,
+        CardSubtitle, CardBody } from 'reactstrap';
     import axios from 'axios';
 
     class Form extends Component {
@@ -84,20 +85,22 @@
                         this.state.pets.length ?
                         <Card style={{width: 400,
                                     height: 400,
-                                    marginBottom: 30}}>
+                                    marginBottom: 30,
+                                    display: 'flex',
+                                    justifyContent: 'row'}}>
                             <div><img src={pet.petImg} style={{width: 200,
                                                                 height: 200,
                                                                 marginBottom: 30}} />
                             <h2>{pet.petName}</h2>
-                            <button onClick={() => this.deletePet(index)}>Delete</button>
-                            <button onClick={() => this.openEditor(index)}>Edit!</button>
+                            <Button onClick={() => this.deletePet(index)}>Delete</Button>
+                            <Button onClick={() => this.openEditor(index)}>Edit</Button>
                             {this.state.editorOpen && this.state.editorIndex === index
                                 ?
                                 <form>
                                     <h3>Edit {this.state.toEdit}</h3>
                                     <input name='petName' value={pet.petName} onChange={e => {this.handleChange(e, index)}} />
                                     <input name='petImg' value={pet.petImg} onChange={e => {this.handleChange(e, index)}} />
-                                    <button onClick={e => this.editPet(e, index)}>Submit!</button>
+                                    <Button onClick={e => this.editPet(e, index)}>Submit</Button>
                                 </form>
                                 :
                                 null
