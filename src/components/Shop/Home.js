@@ -45,7 +45,7 @@ class Home extends Component {
                     FIND YOUR BEST FRIEND AND COMPANION!
                 </div>
                 <div>
-                <Link to='/register'><button id='signUpLink'>Sign up with us now!</button></Link>
+                <Link to='/club'><button id='signUpLink'>Sign up with us now!</button></Link>
                 </div>
 
         </div>
