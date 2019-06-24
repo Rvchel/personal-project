@@ -1,3 +1,3 @@
-SELECT u.users_id, u.users_username, o. * FROM orders AS o
-INNER JOIN users AS u
-ON o.products_id = u.users_id
+SELECT users.users_id, users.username, orders. * FROM orders
+INNER JOIN users
+ON orders.products_id = users.users_id
