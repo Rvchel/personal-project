@@ -13,7 +13,7 @@ class Cart extends Component {
 
     componentDidMount() {
         this.props.getUser()
-        this.props.removeFromCart()
+        // this.props.removeFromCart()
     }
 
     render() {

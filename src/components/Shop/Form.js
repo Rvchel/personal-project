@@ -96,25 +96,29 @@ import { relative } from 'path';
             console.log(this.state.pets)
             return (
                 <div> 
-                <div style={{display: 'flex', flexFlow: 'row'}}>
+                <div style={{display: 'flex', flexFlow: 'row', display: 'flex', flexWrap: 'wrap'}}>
                     {this.state.pets.map((pet, index) => (
                         this.state.pets.length 
                         ?
                         <Card style={{width: 700,
                                     height: 400,
-                                    marginLeft: 30
-                                    }}>
+                                    marginLeft: 30,
+                                    marginTop: 40
+                                    }} color='dark'>
                             <div><img src={pet.petImg} style={{width: 200,
                                                                 height: 200,
-                                                                marginBottom: 30}} />
+                                                                marginBottom: 30,
+                                                                borderRadius: 100,
+                                                                marginLeft: 10,
+                                                                marginTop: 5}} />
                             <div>
                             <h2>{pet.petName}</h2>
                             <Button style={{marginLeft: 200, marginTop: 100}} onClick={() => this.deletePet(index)}>Delete</Button>
                             </div>
 
                             
-                            <div style={{marginLeft: 290, marginTop: -50, outline: 'none'}}>
-                            <Fab color="secondary" aria-label="Edit">
+                            <div style={{marginLeft: 290, marginTop: -50}}>
+                            <Fab style={{outline: 'none'}} color="secondary" aria-label="Edit">
                                 <Icon onClick={() => this.openEditor(index)}>edit_icon</Icon>
                             </Fab>
                             </div>
@@ -136,7 +140,7 @@ import { relative } from 'path';
                             null
                     ))} </div>
 
-                <div> <Card style={{marginTop: 450, marginRight: 400, marginLeft: 400}}>
+                <div> <Card color='dark' style={{marginTop: 450, marginRight: 400, marginLeft: 400}}>
                         Pet name:
                         <input name='name' value={this.state.name} onChange={e => this.createHandleChange(e)} />
 

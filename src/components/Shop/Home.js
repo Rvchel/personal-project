@@ -32,7 +32,7 @@ class Home extends Component {
                 <button className='homeButton'>BREEDS</button>
                 <button className='homeButton'>ABOUT</button>
                 {/* Might need to change link back to gallery */}
-                <Link to='/gallery'><button className='homeButton'>GALLERY</button></Link>
+                <Link to='/gallery'><button className='homeButton'>BLOG</button></Link>
                 </div>
 
             </div>
