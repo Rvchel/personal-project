@@ -1,7 +1,11 @@
     import React, {Component} from 'react';
     import { Card, Button, CardImg, CardTitle, CardText, CardDeck,
-        CardSubtitle, CardBody } from 'reactstrap';
+        CardSubtitle, CardBody, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
+        import { makeStyles } from '@material-ui/core/styles';
+        import Fab from '@material-ui/core/Fab';
+        import Icon from '@material-ui/core/Icon';
     import axios from 'axios';
+import { relative } from 'path';
 
     class Form extends Component {
         constructor(props) {
@@ -14,13 +18,15 @@
                 editorOpen: false,
                 editorIndex: '',
                 toEdit: '',
-                editor: false
+                editor: false,
+                modal: false
             }
             this.updatePet = this.updatePet.bind(this);
             this.addPet = this.addPet.bind(this);
             this.editPet = this.editPet.bind(this);
             this.deletePet = this.deletePet.bind(this);
             this.handleChange = this.handleChange.bind(this);
+            this.toggle = this.toggle.bind(this);
 
         }
 
@@ -77,27 +83,43 @@
             })
         }
 
+        toggle() {
+            this.setState(prevState => ({
+                modal: !prevState.modal
+            }));
+        }
+
 
         render() {
+            const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
             // console.log(this.state.img)
             console.log(this.state.pets)
             return (
                 <div> 
-
+                <div style={{display: 'flex', flexFlow: 'row'}}>
                     {this.state.pets.map((pet, index) => (
                         this.state.pets.length 
                         ?
-                        <Card style={{width: 400,
+                        <Card style={{width: 700,
                                     height: 400,
-                                    marginBottom: 30,
-                                    display: 'flex',
-                                    justifyContent: 'row'}}>
+                                    marginLeft: 30
+                                    }}>
                             <div><img src={pet.petImg} style={{width: 200,
                                                                 height: 200,
                                                                 marginBottom: 30}} />
+                            <div>
                             <h2>{pet.petName}</h2>
-                            <Button onClick={() => this.deletePet(index)}>Delete</Button>
-                            <Button onClick={() => this.openEditor(index)}>Edit</Button>
+                            <Button style={{marginLeft: 200, marginTop: 100}} onClick={() => this.deletePet(index)}>Delete</Button>
+                            </div>
+
+                            
+                            <div style={{marginLeft: 290, marginTop: -50, outline: 'none'}}>
+                            <Fab color="secondary" aria-label="Edit">
+                                <Icon onClick={() => this.openEditor(index)}>edit_icon</Icon>
+                            </Fab>
+                            </div>
+                            
+
                             {this.state.editorOpen && this.state.editorIndex === index
                                 ?
                                 <form>
@@ -109,13 +131,12 @@
                                 :
                                 null
                             }
-                            
                             </div> </Card>
                             :
                             null
-                    ))}
+                    ))} </div>
 
-                    <div>
+                <div> <Card style={{marginTop: 450, marginRight: 400, marginLeft: 400}}>
                         Pet name:
                         <input name='name' value={this.state.name} onChange={e => this.createHandleChange(e)} />
 
@@ -123,7 +144,15 @@
                         <input name='img' value={this.state.img} onChange={e => this.createHandleChange(e)} />
 
                         <button onClick={e => this.addPet(e, this.state.name, this.state.img)}>Add Pet!</button>
-                    </div>
+                    </Card> 
+                </div>
+
+                    
+                    {/* <Fab color="secondary" aria-label="Edit">
+                        <Icon>edit_icon</Icon>
+                    </Fab> */}
+
+                    {/* <Button onClick={() => this.openEditor(index)}>Edit</Button> */}
 
 
 
@@ -135,6 +164,7 @@
 
 
                 </div>
+
             )
         }
     }
