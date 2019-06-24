@@ -33,9 +33,12 @@ class Dashboard extends Component {
             <div>
 
                 <div>Dashboard</div>
+
                 <Link to='/cart'><button>Cart</button></Link>
+
                 <Link to='/'><button>Home</button></Link>
 
+                <div>
                 <div>{this.state.products.map((products, index)=> (
 
                     <Product
@@ -45,7 +48,7 @@ class Dashboard extends Component {
                     description={products.description}
                     id={products.id} />
 
-                ))}</div>
+                ))}</div> </div>
 
                 {/* Might add form for new products? */}
                 {/* <Form /> */}
