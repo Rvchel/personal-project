@@ -34,27 +34,29 @@
             this.setState({pets: update, editorOpen: false, editorIndex: ''})
         }
 
-        addPet(e, name, img) {
+        addPet(e, petName, petImg) {
+            // console.log(petName, petImg)
             e.preventDefault()
-            axios.post('api/pets', {
-                name: '',
-                img: ''
+            const {name, img} = this.state
+            axios.post('/api/pets', {
+                petName: `${name}`,
+                petImg: `${img}`
             }).then(response => this.updatePet(response.data)).catch(error => console.log(error))
         } 
 
         editPet(e, index) {
             e.preventDefault()
             const {pets} = this.state
-            axios.put(`/api/pet/`, {petName: pets[index].petName, petImg: pets[index].petImg, id: pets[index].id})
+            axios.put(`/api/pet`, {petName: pets[index].petName, petImg: pets[index].petImg, id: pets[index].id})
             .then(response => this.updatePet(response.data))
 
         }
 
         deletePet(pet) {
-            console.log('deletePetinForm', pet)
-            axios.delete(`/api/pets/:${pet}`).then(response => {
+            // console.log('deletePetinForm', pet)
+            axios.delete(`/api/pets/${pet}`).then(response => {
                 this.updatePet(response.data)
-            })
+            }) 
         }
 
         handleChange(e, index) {
@@ -77,12 +79,14 @@
 
 
         render() {
-            /// console.log(this.state.name)/
+            // console.log(this.state.img)
+            console.log(this.state.pets)
             return (
                 <div> 
 
                     {this.state.pets.map((pet, index) => (
-                        this.state.pets.length ?
+                        this.state.pets.length 
+                        ?
                         <Card style={{width: 400,
                                     height: 400,
                                     marginBottom: 30,

@@ -43,7 +43,7 @@ app.get('/auth/user', getUser);
 app.post('/api/pets', addPet);
 app.get('/api/pets', getPet);
 app.delete('/api/pets/:pet', deletePet);
-app.put('/api/pet/', editPet);
+app.put('/api/pet', editPet);
 
 
 
