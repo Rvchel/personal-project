@@ -97,11 +97,13 @@ img {
 .productImage {
   max-width: 40vw;
   max-height: 50vh;
+  flex-wrap: wrap;
 }
 
 #productContainer {
   display: flex;
   max-height: 200px;
+  flex-wrap: wrap;
 }
 
 #addToCart {

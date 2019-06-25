@@ -38,11 +38,10 @@ class Dashboard extends Component {
         return (
             <div style={{backgroundColor: 'white', height: 900}}>
 
-                <Link to='/cart'><button id='cartButton'>Cart</button></Link>
-
-                <Link to='/'><button>Home</button></Link>
-
                 <div>
+                <div>
+                <Link to='/'><button>Home</button></Link>
+                <Link to='/cart'><button id='cartButton'>Cart</button></Link>
                 <div id='productContainer'>{this.state.products.map((products, index)=> (
 
                     <Product
@@ -52,7 +51,7 @@ class Dashboard extends Component {
                     description={products.description}
                     id={products.id} />
 
-                ))}</div> </div>
+                ))}</div> </div> </div>
 
                 {/* Might add form for new products? */}
                 {/* <Form /> */}

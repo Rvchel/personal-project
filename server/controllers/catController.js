@@ -2,7 +2,7 @@
 module.exports = {
 
     //Adding cat (WORKS)
-    addPet: (req, res) => {
+    addCat: (req, res) => {
         console.log(req.body)
         const db = req.app.get('db')
         const {catname, img} = req.body
@@ -13,7 +13,7 @@ module.exports = {
     },
 
     //Getting all cats (WORKS)
-    getPet: (req, res) => {
+    getCat: (req, res) => {
         const db = req.app.get('db')
 
         db.getCats()
@@ -23,7 +23,7 @@ module.exports = {
     },
 
     //Deletes one cat (WORKS)
-    deletePet: (req, res) => {
+    deleteCat: (req, res) => {
         console.log(req.params,'hit that')
         const db = req.app.get('db')
         const {pet} = req.params
@@ -34,7 +34,7 @@ module.exports = {
         .catch(() => console.log('cant delete cat'))
     },
 
-    editPet: (req, res) => {
+    editCat: (req, res) => {
         console.log(req.body)
         console.log(req.params)
         const db = req.app.get('db')
