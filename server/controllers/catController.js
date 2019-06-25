@@ -35,15 +35,13 @@ module.exports = {
     },
 
     editPet: (req, res) => {
+        console.log(req.body)
+        console.log(req.params)
         const db = req.app.get('db')
-            const {petName, petImg} = req.body
-            const {pet} = req.params
+            const {catname, img} = req.body
+            const {id} = req.params
 
-            db.updateCat([catName, img])
-            // const index = pets.findIndex(element => {
-            //     return element.id === id
-            // })
-            splice(pet, 1, req.body)
+            db.updateCat([+id, catname, img])
             .then(response => res.status(200).json(response))
             .catch(() => console.log('cant update cat'))
             

@@ -1,7 +1,7 @@
--- UPDATE cats SET
--- catName = $2,
--- img = $3
--- WHERE id = $1
+UPDATE cats SET
+catname = $2,
+img = $3
+WHERE id = $1;
 
-
+-- SELECT * FROM 
 

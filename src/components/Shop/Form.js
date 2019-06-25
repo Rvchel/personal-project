@@ -52,13 +52,16 @@ import { relative } from 'path';
             // .then(response => this.updatePet(response.data)).catch(error => console.log(error))
         } 
 
-        editPet(e, index) {
+        editPet(e, pet) {
             e.preventDefault()
             const {pets} = this.state
-            axios.put(`/api/pet`, {catname: pets[index].catname, img: pets[index].img, id: pets[index].id})
-            .then(response => this.updatePet(response.data))
+            axios.put(`/api/pet/${pet.id}`, {catname: pet.catname, img: pet.img})
+            .then(response => {
+                console.log(response.data)
+                this.setState({editorOpen: false, editorIndex: ''})
 
-        }
+        })
+    }
 
         deletePet(pet) {
             // console.log('deletePetinForm', pet)
@@ -66,7 +69,9 @@ import { relative } from 'path';
         }
 
         handleChange(e, index) {
+            // this.setState({[e.target.name]: e.target.value})
             let tempPets = this.state.pets
+            // console.log(tempPets[index])
             let tempPet = this.state.pets[index]
             tempPet[e.target.name] = e.target.value
             tempPets[index] = tempPet
@@ -92,6 +97,7 @@ import { relative } from 'path';
 
         render() {
             console.log(this.state.pets)
+            
             const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
             // console.log(this.state.img)
             console.log(this.state.pets)
@@ -131,7 +137,7 @@ import { relative } from 'path';
                                     <h3>Edit {this.state.toEdit}</h3>
                                     <input name='catname' value={pet.catname} onChange={e => {this.handleChange(e, index)}} />
                                     <input name='img' value={pet.img} onChange={e => {this.handleChange(e, index)}} />
-                                    <Button onClick={e => this.editPet(e, index)}>Submit</Button>
+                                    <Button onClick={e => this.editPet(e, pet)}>Submit</Button>
                                 </form>
                                 :
                                 null
@@ -152,13 +158,6 @@ import { relative } from 'path';
                         <button onClick={e => this.addPet(e, this.state.name, this.state.imgUrl)}>Add Pet!</button>
                     </Card> 
                 </div>
-
-                    
-                    {/* <Fab color="secondary" aria-label="Edit">
-                        <Icon>edit_icon</Icon>
-                    </Fab> */}
-
-                    {/* <Button onClick={() => this.openEditor(index)}>Edit</Button> */}
 
 
 
