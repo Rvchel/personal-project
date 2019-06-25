@@ -36,7 +36,7 @@ class Dashboard extends Component {
         // console.log(this.props.user)
 
         return (
-            <div style={{backgroundColor: 'white', height: 900}}>
+            <div style={{color: 'white'}}>
 
                 <div>
                 <div>
