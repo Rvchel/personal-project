@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Redirect, Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 import Cards from '../../Styles/reactstrap/Cards';
 import Form from './Form';
 import Product from './Product';
@@ -10,12 +11,14 @@ class Dashboard extends Component {
     constructor() {
         super();
         this.state = {
-            products: []
+            products: [],
+            redirect: false
         }
     }
 
     componentDidMount() {
         this.getProducts()
+        this.props.getUser()
     }
 
     getProducts() {
@@ -29,7 +32,9 @@ class Dashboard extends Component {
 
 
     render() {
-        console.log(this.state.products)
+        // console.log(this.props)
+        // console.log(this.props.user)
+
         return (
             <div style={{backgroundColor: 'white', height: 900}}>
 
@@ -57,4 +62,9 @@ class Dashboard extends Component {
     }
 }
 
-export default Dashboard;
+const mapStateToProps = state => state;
+
+export default connect(
+    mapStateToProps,
+    {getUser}
+) (Dashboard);

@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import {Redirect, Link} from 'react-router-dom';
+//Might not need redux
+import {getUser} from '../../redux/reducer';
 import axios from 'axios';
 
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
@@ -18,6 +21,11 @@ class Login extends Component {
         this.loginUser = this.loginUser.bind(this);
     }
 
+    componentDidMount() {
+        this.props.getUser()
+    
+    }
+
     handleUsername(e) {
         this.setState({username: e.target.value})
     }
@@ -31,7 +39,7 @@ class Login extends Component {
 
     loginUser() {
         axios.post('/auth/login', {username: this.state.username, password: this.state.password})
-        .then((response) => {this.setState({redirect: true}); this.updateUser(response.data)})
+        .then((response) => {this.setState({redirect: true}, ()=> {this.updateUser(this.props.user)});})
         .catch(error => console.log('Login Wrong'))
     }
 
@@ -43,17 +51,17 @@ class Login extends Component {
     render() {
 
 
-        console.log(this.state.user)
+    
         // Checking to see if an admin or not and redirects to correct page. 
-        if(this.state.redirect === true && this.state.user.admin === true) {
-            console.log('Logged in admin.')
-            return <Redirect to='/admin' />
-        }
+        // if(this.state.redirect === true && this.state.user.admin === true) {
+        //     console.log('Logged in admin.')
+        //     return <Redirect to='/admin' />
+        // }
 
-        if(this.state.redirect === true && this.state.user.admin === false) {
-            console.log('logged in customer.')
-            return <Redirect to='/'/>
-        }
+        // if(this.state.redirect === true && this.state.user.admin === false) {
+        //     console.log('logged in customer.')
+        //     return <Redirect to='/'/>
+        // }
 
 
 
@@ -101,4 +109,9 @@ class Login extends Component {
     }
 }
 
-export default Login;
+const mapStateToProps = state => state;
+
+export default connect(
+    mapStateToProps,
+    {getUser}
+) (Login);

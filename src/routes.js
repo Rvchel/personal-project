@@ -19,8 +19,8 @@ export default (
         <Route path={'/dashboard'} component={Dashboard} />
         <Route path={'/cart'} component={Cart}/>
         <Route path={'/gallery'} component={Gallery} />
-        <Route exact path="/form" component={Form} />
-        <Route path="/edit/:id" component={Form} />
+        {/* <Route exact path="/form" component={Form} />
+        <Route path="/edit/:id" component={Form} /> */}
         <Route path={'/admin'} component={Admin} />
     </Switch>
 );

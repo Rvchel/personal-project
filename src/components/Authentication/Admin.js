@@ -16,7 +16,7 @@ class Admin extends Component {
         return (
 
             <div>
-            <h1>HELLO</h1>
+            <h1>POPCORN</h1>
             </div>
         )
     }
