@@ -95,8 +95,8 @@ img {
 }
 
 .productImage {
-  max-width: 40vw;
-  max-height: 50vh;
+  max-width: 20vw;
+  max-height: 30vh;
   flex-wrap: wrap;
 }
 
