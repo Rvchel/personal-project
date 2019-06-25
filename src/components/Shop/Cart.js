@@ -35,7 +35,6 @@ class Cart extends Component {
                                     ${item[0].price}
 
                                     <button onClick={() => this.props.removeFromCart(this.props.id, this.props.price)}>Delete</button>
-                                    {/* {this.props.user.total} */}
 
                                     </div>
                                 )
