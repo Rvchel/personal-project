@@ -47,7 +47,7 @@ class Login extends Component {
         // Checking to see if an admin or not and redirects to correct page. 
         if(this.state.redirect === true && this.state.user.admin === true) {
             console.log('Logged in admin.')
-            return <Redirect to='/dashboard' />
+            return <Redirect to='/admin' />
         }
 
         if(this.state.redirect === true && this.state.user.admin === false) {

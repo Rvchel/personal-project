@@ -8,6 +8,7 @@ import Home from './components/Shop/Home';
 import Cart from './components/Shop/Cart';
 import Gallery from './components/Shop/Gallery';
 import Form from './components/Shop/Form';
+import Admin from './components/Authentication/Admin';
 
 export default (
     <Switch>
@@ -20,5 +21,6 @@ export default (
         <Route path={'/gallery'} component={Gallery} />
         <Route exact path="/form" component={Form} />
         <Route path="/edit/:id" component={Form} />
+        <Route path={'/admin'} component={Admin} />
     </Switch>
 );

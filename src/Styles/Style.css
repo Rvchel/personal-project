@@ -97,18 +97,21 @@ img {
 .productImage {
   max-width: 40vw;
   max-height: 50vh;
-  margin-bottom: 20px;
 }
 
 #productContainer {
-  color: white;
-  margin-left: 30vw;
-  margin-bottom: 20px;
+  display: flex;
+  max-height: 200px;
 }
 
 #addToCart {
   color: #139cd3;
   background: transparent;
   border: none;
+}
+
+#cartContainer {
+  color: white;
+  flex-direction: row;
 }
 /*# sourceMappingURL=Style.css.map */

@@ -20,10 +20,8 @@ class Cart extends Component {
         console.log(this.props.user)
         return (
             <div>
-                {/* pull user object and map over it */}
-                Cart
 
-                <div>
+                <div id='cartContainer'>
                     {this.props.user
                     ?
                         this.props.user.cart
@@ -36,7 +34,8 @@ class Cart extends Component {
                                     <img src={item[0].image} />
                                     ${item[0].price}
 
-                                    <button onClick={() => this.props.removeFromCart(this.props.id, this.props.price)}>Execute</button>
+                                    <button onClick={() => this.props.removeFromCart(this.props.id, this.props.price)}>Delete</button>
+                                    {/* {this.props.user.total} */}
 
                                     </div>
                                 )
@@ -51,6 +50,8 @@ class Cart extends Component {
                 
                 </div>
 
+                <div style={{color: 'white'}}>{parseFloat(Math.round(this.props.user.total * 100) / 100).toFixed(2)}</div>
+                {console.log(this.props.user.total)}
                 <Link to='/'><button>Home</button></Link>
 
             </div>

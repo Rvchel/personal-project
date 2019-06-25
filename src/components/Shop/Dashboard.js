@@ -4,6 +4,7 @@ import Cards from '../../Styles/reactstrap/Cards';
 import Form from './Form';
 import Product from './Product';
 import axios from 'axios';
+import { getUser } from '../../redux/reducer';
 
 class Dashboard extends Component {
     constructor() {
@@ -30,16 +31,14 @@ class Dashboard extends Component {
     render() {
         console.log(this.state.products)
         return (
-            <div>
+            <div style={{backgroundColor: 'white', height: 900}}>
 
-                <div>Dashboard</div>
-
-                <Link to='/cart'><button>Cart</button></Link>
+                <Link to='/cart'><button id='cartButton'>Cart</button></Link>
 
                 <Link to='/'><button>Home</button></Link>
 
                 <div>
-                <div>{this.state.products.map((products, index)=> (
+                <div id='productContainer'>{this.state.products.map((products, index)=> (
 
                     <Product
                     key={index}

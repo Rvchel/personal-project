@@ -114,6 +114,8 @@ img {
     color: white;
     margin-left: 30vw;
     margin-bottom: 20px;
+    display: flex;
+    flex-flow: row;
 }
 
 // Add to cart button.
@@ -133,6 +135,8 @@ img {
 // .blah {
 //     color: black;
 // }
+
+//CART COMPONENT
 
 
 // @mixin flex {
