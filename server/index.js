@@ -5,7 +5,7 @@ const session = require('express-session');
 const {getProducts} = require('./controllers/productsController');
 const {registerUser, loginUser, getUser, logoutUser} = require('./controllers/authController');
 const {addToCart, removeFromCart} = require('./controllers/cartController');
-const {editPet, deletePet, addPet, getPet} = require('./controllers/galleryController');
+const {editPet, deletePet, addPet, getPet} = require('./controllers/catController');
 const {getAllOrders} = require('./controllers/ordersController');
 
 const app = express();
@@ -45,6 +45,11 @@ app.post('/api/pets', addPet);
 app.get('/api/pets', getPet);
 app.delete('/api/pets/:pet', deletePet);
 app.put('/api/pet', editPet);
+
+// app.post('/api/pets', addPet);
+// app.get('/api/pets', getPet);
+// app.delete('/api/pets/:pet', deletePet);
+// app.put('/api/pet', editPet);
 
 //orders
 app.get('/api/orders', getAllOrders);

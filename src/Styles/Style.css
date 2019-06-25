@@ -114,4 +114,17 @@ img {
   color: white;
   flex-direction: row;
 }
+
+.adminPage {
+  color: white;
+}
+
+.adminOrders {
+  margin-left: 20vw;
+}
+
+.ordersText {
+  margin-left: 41vw;
+  margin-bottom: 2vh;
+}
 /*# sourceMappingURL=Style.css.map */

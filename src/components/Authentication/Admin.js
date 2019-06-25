@@ -25,26 +25,16 @@ class Admin extends Component {
         const {orders} = this.state
         return (
 
-            <div style={{color: 'white'}}>
+            <div className='adminPage' >
+            <Link to='/'><button>Home</button></Link>
 
-            <div> {orders.map((order, index) => {
+            <p className='ordersText'>ORDERS:</p>
+            <div className='adminOrders'> {orders.map((order, index) => {
                 return (
-                    <p key={index}> {order.users_id} </p>
+                    <p key={index}> order id:{order.users_id} user:{order.username} product id:{order.products_id} state:{order.state} zip:{order.zip} city:{order.city} total: ${order.total} quantity:{order.quantity} </p>
                 )
             })} </div>
 
-
-
-
-
-
-
-
-
-
-
-            <h1>POPCORN</h1>
-            <Link to='/'><button>Home</button></Link>
             </div>
         )
     }

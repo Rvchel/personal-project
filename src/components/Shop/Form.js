@@ -14,7 +14,7 @@ import { relative } from 'path';
                 pets: [],
                 name: '',
                 newName: '',
-                img: '',
+                imgUrl: '',
                 editorOpen: false,
                 editorIndex: '',
                 toEdit: '',
@@ -40,29 +40,29 @@ import { relative } from 'path';
             this.setState({pets: update, editorOpen: false, editorIndex: ''})
         }
 
-        addPet(e, petName, petImg) {
-            // console.log(petName, petImg)
+        addPet(e, catname, img) {
+            // console.log(catname, img)
             e.preventDefault()
-            const {name, img} = this.state
+            const {name, imgUrl} = this.state
             axios.post('/api/pets', {
-                petName: `${name}`,
-                petImg: `${img}`
-            }).then(response => this.updatePet(response.data)).catch(error => console.log(error))
+                catname: `${name}`,
+                img: `${imgUrl}`
+            })
+            .then(response => this.setState({pets: response.data})).catch(error => console.log(error))
+            // .then(response => this.updatePet(response.data)).catch(error => console.log(error))
         } 
 
         editPet(e, index) {
             e.preventDefault()
             const {pets} = this.state
-            axios.put(`/api/pet`, {petName: pets[index].petName, petImg: pets[index].petImg, id: pets[index].id})
+            axios.put(`/api/pet`, {catname: pets[index].catname, img: pets[index].img, id: pets[index].id})
             .then(response => this.updatePet(response.data))
 
         }
 
         deletePet(pet) {
             // console.log('deletePetinForm', pet)
-            axios.delete(`/api/pets/${pet}`).then(response => {
-                this.updatePet(response.data)
-            }) 
+            axios.delete(`/api/pets/${pet}`).then(response => this.setState({pets: response.data})).catch(error => console.log(error))
         }
 
         handleChange(e, index) {
@@ -91,6 +91,7 @@ import { relative } from 'path';
 
 
         render() {
+            console.log(this.state.pets)
             const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
             // console.log(this.state.img)
             console.log(this.state.pets)
@@ -104,16 +105,16 @@ import { relative } from 'path';
                                     height: 400,
                                     marginLeft: 30,
                                     marginTop: 40
-                                    }} color='dark'>
-                            <div><img src={pet.petImg} style={{width: 200,
+                                    }} color='dark'key={index}>
+                            <div><img src={pet.img} style={{width: 200,
                                                                 height: 200,
                                                                 marginBottom: 30,
                                                                 borderRadius: 100,
                                                                 marginLeft: 10,
                                                                 marginTop: 5}} />
                             <div>
-                            <h2>{pet.petName}</h2>
-                            <Button style={{marginLeft: 200, marginTop: 100}} onClick={() => this.deletePet(index)}>Delete</Button>
+                            <h2>{pet.catname}</h2>
+                            <Button style={{marginLeft: 200, marginTop: 100}} onClick={() => this.deletePet(pet.id)}>Delete</Button>
                             </div>
 
                             
@@ -128,8 +129,8 @@ import { relative } from 'path';
                                 ?
                                 <form>
                                     <h3>Edit {this.state.toEdit}</h3>
-                                    <input name='petName' value={pet.petName} onChange={e => {this.handleChange(e, index)}} />
-                                    <input name='petImg' value={pet.petImg} onChange={e => {this.handleChange(e, index)}} />
+                                    <input name='catname' value={pet.catname} onChange={e => {this.handleChange(e, index)}} />
+                                    <input name='img' value={pet.img} onChange={e => {this.handleChange(e, index)}} />
                                     <Button onClick={e => this.editPet(e, index)}>Submit</Button>
                                 </form>
                                 :
@@ -140,14 +141,15 @@ import { relative } from 'path';
                             null
                     ))} </div>
 
+                    {/* ADDING PET */}
                 <div> <Card color='dark' style={{marginTop: 450, marginRight: 400, marginLeft: 400}}>
                         Pet name:
                         <input name='name' value={this.state.name} onChange={e => this.createHandleChange(e)} />
 
                         Pet Image: 
-                        <input name='img' value={this.state.img} onChange={e => this.createHandleChange(e)} />
+                        <input name='imgUrl' value={this.state.imgUrl} onChange={e => this.createHandleChange(e)} />
 
-                        <button onClick={e => this.addPet(e, this.state.name, this.state.img)}>Add Pet!</button>
+                        <button onClick={e => this.addPet(e, this.state.name, this.state.imgUrl)}>Add Pet!</button>
                     </Card> 
                 </div>
 
