@@ -24,16 +24,18 @@ class Cart extends Component {
     //stripe
     async handleToken(token) {
         console.log({token})
-        let {cart, total} = this.props.user
-        const response = await axios.post('/api/checkout', {token, cart, total});
-        const {status} = response.data
         console.log(status)
-        if(status === 'success') {
-            toast('Success! Check email for details.', {type: "success"})
-        } else {
-            toast('Something went wrong...', {type: 'error'})
+
+        let {cart, total} = this.props.user
+        const response = await axios.post('/api/checkout', {token, cart, total})
+        const {status} = response.data
+        
+            if(status === 'success') {
+                toast('Success! Check email for details.', {type: "success"})
+            } else {
+                toast('Something went wrong...', {type: 'error'})
+            }
         }
-    }
 
     render() {
         console.log(this.props.user)

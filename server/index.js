@@ -49,26 +49,24 @@ app.put('/api/pet/:id', editCat);
 //orders
 app.get('/api/orders', getAllOrders);
 
-//Stripe (FIX)
+//Stripe
 const stripe = require('stripe')('sk_test_OtKDrvTUWiTxwblRzA6ashZR00NoebjoJc')
 const uuid = require('uuidv4')
 
 app.post("/api/checkout", async (req, res) => {
-    
     let error;
     let status;
 
     try {
-        const { total, cart, token } = req.body;
-    
+        const { total, cart, token } = req.body
         const customer = await stripe.customers.create({
-        email: token.email,
-        source: token.id
-        });
+        
+            email: token.email,
+            source: token.id
+        })
     
         const idempotency_key = uuid();
-        const charge = await stripe.charges.create(
-        {
+        const charge = await stripe.charges.create({
             amount: (Math.round(total * 100)),
             currency: "usd",
             customer: customer.id,
@@ -83,22 +81,24 @@ app.post("/api/checkout", async (req, res) => {
                 country: token.card.address_country,
                 postal_code: token.card.address_zip
             }
-            }
-        },
+        }
+    },
         {
             idempotency_key
-        }
-        );
-        console.log("Charge:", { charge });
+        })
+        console.log("Charge:", { charge })
+
         status = "success";
-    } catch (error) {
+    } 
+    catch (error) {
         console.error("Error:", error);
-        status = "failure";
+        
+            status = "failure";
     }
     
     res.json({ error, status });
     console.log(status)
-    });
+    })
 
 
 massive(CONNECTION_STRING).then(db => {
