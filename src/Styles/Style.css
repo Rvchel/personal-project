@@ -150,13 +150,45 @@ img {
   justify-content: space-evenly;
 }
 
+.hoverText {
+  visibility: hidden;
+  opacity: 0;
+  color: white;
+}
+
+#whiteDivContainer:hover .hoverText {
+  visibility: visible;
+  opacity: 1;
+}
+
 #friendText {
-  padding-top: 1vh;
+  padding-top: 3vh;
   border-top: solid rgb(56, 52, 52) 1px;
 }
 
 .catCareImage {
   max-height: 40vh;
   max-width: 30vw;
+}
+
+
+/* RESPONSIVENESS */
+@media (max-width: 900px) {
+  #Catz {
+    display: none;
+  }
+  #mainButtons {
+    display: none;
+  }
+  #catClubButton {
+    display: none;
+  }
+  #carouselContainer {
+    display: none;
+  }
+}
+
+.openMenu {
+  display: none;
 }
 /*# sourceMappingURL=Style.css.map */
