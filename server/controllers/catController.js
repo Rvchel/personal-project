@@ -38,10 +38,10 @@ module.exports = {
         console.log(req.body)
         console.log(req.params)
         const db = req.app.get('db')
-            const {catname, img} = req.body
+            const {catname, img, description} = req.body
             const {id} = req.params
 
-            db.updateCat([+id, catname, img])
+            db.updateCat([+id, catname, img, description])
             .then(response => res.status(200).json(response))
             .catch(() => console.log('cant update cat'))
             

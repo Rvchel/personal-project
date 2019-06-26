@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Redirect, Link} from 'react-router-dom';
-//Might not need redux
-import {getUser} from '../../redux/reducer';
 import axios from 'axios';
+//NEED TO FIX LOGIN PASSWORD
 
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
@@ -19,11 +18,6 @@ class Login extends Component {
         this.handleUsername = this.handleUsername.bind(this);
         this.handlePassword = this.handlePassword.bind(this);
         this.loginUser = this.loginUser.bind(this);
-    }
-
-    componentDidMount() {
-        this.props.getUser()
-    
     }
 
     handleUsername(e) {
@@ -49,22 +43,6 @@ class Login extends Component {
 
 
     render() {
-
-
-    
-        // Checking to see if an admin or not and redirects to correct page. 
-        // if(this.state.redirect === true && this.state.user.admin === true) {
-        //     console.log('Logged in admin.')
-        //     return <Redirect to='/admin' />
-        // }
-
-        // if(this.state.redirect === true && this.state.user.admin === false) {
-        //     console.log('logged in customer.')
-        //     return <Redirect to='/'/>
-        // }
-
-
-
         return (
             <div>
 
@@ -79,23 +57,14 @@ class Login extends Component {
             marginTop: 200}}>
             <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
             <Label for="exampleEmail" className="mr-sm-2">Email</Label>
-            <Input type="Username" name="Username" id="exampleEmail" placeholder="Username" onChange={this.handleUsername}  />
+            <input type="Username" name="Username" id="exampleEmail" placeholder="Username" onChange={this.handleUsername}  />
             </FormGroup>
             <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
             <Label for="examplePassword" className="mr-sm-2">Password</Label>
-            <Input type="password" name="password" id="examplePassword" placeholder="Password" onChange={this.handlePassword} />
+            <input placeholder="Password" type='password' onChange={this.handlePassword} />
             </FormGroup>
             <Button onClick={this.loginUser}>Login</Button>
         </Form>
-
-                {/* <Link to='/register'><button className='blah' style={{
-                    color: 'white',
-                    backgroundColor: 'transparent',
-                    border: 'none',
-                    marginLeft: 450,
-                    marginTop: 20,
-                    fontFamily: 'Poppins, sans-serif'
-                }}>Not a User Yet?</button></Link> */}
 
                 <Link to='/register'><Button outline color="secondary" style={{
                     marginLeft: 450,
@@ -109,9 +78,4 @@ class Login extends Component {
     }
 }
 
-const mapStateToProps = state => state;
-
-export default connect(
-    mapStateToProps,
-    {getUser}
-) (Login);
+export default Login;

@@ -104,6 +104,7 @@ img {
   display: flex;
   max-height: 200px;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 #addToCart {
@@ -169,6 +170,12 @@ img {
 .catCareImage {
   max-height: 40vh;
   max-width: 30vw;
+}
+
+#blogButtons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 18vh;
 }
 
 

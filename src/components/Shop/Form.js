@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
+import { relative } from 'path';
+import { makeStyles } from '@material-ui/core/styles';
 import { Card, Button, CardImg, CardTitle, CardText, CardDeck,
 CardSubtitle, CardBody, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
-import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import Icon from '@material-ui/core/Icon';
 import axios from 'axios';
-import { relative } from 'path';
 
     class Form extends Component {
         constructor(props) {
@@ -15,6 +15,7 @@ import { relative } from 'path';
                 name: '',
                 newName: '',
                 imgUrl: '',
+                petDescription: '',
                 editorOpen: false,
                 editorIndex: '',
                 toEdit: '',
@@ -40,13 +41,14 @@ import { relative } from 'path';
             this.setState({pets: update, editorOpen: false, editorIndex: ''})
         }
 
-        addPet(e, catname, img) {
+        addPet(e, catname, img, description) {
             // console.log(catname, img)
             e.preventDefault()
-            const {name, imgUrl} = this.state
+            const {name, imgUrl, petDescription} = this.state
             axios.post('/api/pets', {
                 catname: `${name}`,
-                img: `${imgUrl}`
+                img: `${imgUrl}`,
+                description: `${petDescription}`
             })
             .then(response => this.setState({pets: response.data})).catch(error => console.log(error))
             // .then(response => this.updatePet(response.data)).catch(error => console.log(error))
@@ -55,7 +57,7 @@ import { relative } from 'path';
         editPet(e, pet) {
             e.preventDefault()
             const {pets} = this.state
-            axios.put(`/api/pet/${pet.id}`, {catname: pet.catname, img: pet.img})
+            axios.put(`/api/pet/${pet.id}`, {catname: pet.catname, img: pet.img, description: pet.description})
             .then(response => {
                 console.log(response.data)
                 this.setState({editorOpen: false, editorIndex: ''})
@@ -97,7 +99,7 @@ import { relative } from 'path';
 
         render() {
             console.log(this.state.pets)
-            
+
             const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
             // console.log(this.state.img)
             console.log(this.state.pets)
@@ -107,36 +109,49 @@ import { relative } from 'path';
                     {this.state.pets.map((pet, index) => (
                         this.state.pets.length 
                         ?
-                        <Card style={{width: 700,
+                        // DISPLAYING INFO ABOUT PET
+                        <Card style={{width: 350,
                                     height: 400,
                                     marginLeft: 30,
                                     marginTop: 40
                                     }} color='dark'key={index}>
-                            <div><img src={pet.img} style={{width: 200,
-                                                                height: 200,
+                            <div><img src={pet.img} style={{width: 170,
+                                                                height: 170,
                                                                 marginBottom: 30,
                                                                 borderRadius: 100,
-                                                                marginLeft: 10,
-                                                                marginTop: 5}} />
+                                                                marginTop: 5, 
+                                                                marginLeft: 90}} />
+                            
+                            <h2 style={{color: 'white'}}
+                            >{pet.catname}</h2>
+                            <h2 style={{color: 'white', height: 10}}
+                            >{pet.description}</h2>
+                        <div id='blogButtons'>
                             <div>
-                            <h2>{pet.catname}</h2>
-                            <Button style={{marginLeft: 200, marginTop: 100}} onClick={() => this.deletePet(pet.id)}>Delete</Button>
+                            <Fab style={{outline: 'none', height: 20, width: 40, marginLeft: 4, marginRight: 2}} color='primary'>
+                            <Icon style={{borderRadius: 90}} onClick={() => this.deletePet(pet.id)}>delete_icon</Icon>
+                            </Fab>
                             </div>
 
                             
-                            <div style={{marginLeft: 290, marginTop: -50}}>
-                            <Fab style={{outline: 'none'}} color="secondary" aria-label="Edit">
+                            <div style={{}}>
+                            <Fab style={{outline: 'none', height: 20, width: 40, marginLeft: 4, marginRight: 2}} color="secondary" aria-label="Edit">
                                 <Icon onClick={() => this.openEditor(index)}>edit_icon</Icon>
                             </Fab>
                             </div>
+                        </div>
                             
 
+                            {/* FORM TO EDIT PET, OPEN & CLOSE EDITOR */}
                             {this.state.editorOpen && this.state.editorIndex === index
                                 ?
                                 <form>
-                                    <h3>Edit {this.state.toEdit}</h3>
+                                    <h3>{this.state.toEdit}</h3>
                                     <input name='catname' value={pet.catname} onChange={e => {this.handleChange(e, index)}} />
-                                    <input name='img' value={pet.img} onChange={e => {this.handleChange(e, index)}} />
+                                    <input name='img' value={pet.img} onChange={e => {this.handleChange(e, index)}}
+                                    />
+                                    <input name='description' value={pet.description} onChange={e => {this.handleChange(e, index)}} 
+                                    />
                                     <Button onClick={e => this.editPet(e, pet)}>Submit</Button>
                                 </form>
                                 :
@@ -154,6 +169,9 @@ import { relative } from 'path';
 
                         Pet Image: 
                         <input name='imgUrl' value={this.state.imgUrl} onChange={e => this.createHandleChange(e)} />
+
+                        Pet Description:
+                        <input name='petDescription' value={this.state.petDescription} onChange={e => this.createHandleChange(e)} />
 
                         <button onClick={e => this.addPet(e, this.state.name, this.state.imgUrl)}>Add Pet!</button>
                     </Card> 
