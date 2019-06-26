@@ -1,10 +1,10 @@
-    import React, {Component} from 'react';
-    import { Card, Button, CardImg, CardTitle, CardText, CardDeck,
-        CardSubtitle, CardBody, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
-        import { makeStyles } from '@material-ui/core/styles';
-        import Fab from '@material-ui/core/Fab';
-        import Icon from '@material-ui/core/Icon';
-    import axios from 'axios';
+import React, {Component} from 'react';
+import { Card, Button, CardImg, CardTitle, CardText, CardDeck,
+CardSubtitle, CardBody, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
+import { makeStyles } from '@material-ui/core/styles';
+import Fab from '@material-ui/core/Fab';
+import Icon from '@material-ui/core/Icon';
+import axios from 'axios';
 import { relative } from 'path';
 
     class Form extends Component {
@@ -33,7 +33,7 @@ import { relative } from 'path';
         componentDidMount() {
             axios.get('/api/pets').then(response => {
                 this.setState({pets: response.data})
-            })
+            }) 
         }
 
         updatePet(update) {

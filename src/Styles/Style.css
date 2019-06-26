@@ -129,4 +129,34 @@ img {
   margin-left: 41vw;
   margin-bottom: 2vh;
 }
+
+#catCareText {
+  color: white;
+  font-family: 'NTR', sans-serif;
+  font-size: 4vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  margin-left: 2.5vw;
+}
+
+.whiteDiv {
+  height: 40vh;
+  width: 30vw;
+  background-color: white;
+}
+
+#whiteDivContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#friendText {
+  padding-top: 1vh;
+  border-top: solid rgb(56, 52, 52) 1px;
+}
+
+.catCareImage {
+  max-height: 40vh;
+  max-width: 30vw;
+}
 /*# sourceMappingURL=Style.css.map */

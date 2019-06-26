@@ -4,6 +4,10 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 import '../../Styles/Style.css'
 
+let image1 = 'https://images.pexels.com/photos/1629061/pexels-photo-1629061.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+let image2 = 'https://images.pexels.com/photos/1643461/pexels-photo-1643461.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+let image3 = 'https://images.pexels.com/photos/1353916/pexels-photo-1353916.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+
 class Home extends Component {
     constructor() {
         super();
@@ -40,6 +44,13 @@ class Home extends Component {
                 <div id='carouselContainer'><Example /></div>
                 </div>
 
+        <div id='catCareText'>CAT CARE ADVICE</div>
+            <div id='whiteDivContainer'>
+                <div className='whiteDiv'><img className='catCareImage' src={image1} /></div>
+                <div className='whiteDiv'><img className='catCareImage' src={image2} /></div>
+                <div className='whiteDiv'><img className='catCareImage' src={image3}/></div>
+            </div>
+                
                 <div id='friendText'>
                     FIND YOUR BEST FRIEND AND COMPANION!
                 </div>
