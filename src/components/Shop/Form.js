@@ -104,20 +104,22 @@ import axios from 'axios';
             // console.log(this.state.img)
             console.log(this.state.pets)
             return (
-                <div>
+                <div id='formContainer'>
 
-                <div> <Card color='dark' style={{marginTop: 450, marginRight:           400, marginLeft: 400}}>
-                        Pet name:
-                        <input name='name' value={this.state.name} onChange={e => this.createHandleChange(e)} />
+                <div> <div id='addCat' color='dark'>
+                        
+                        <input className='addCatInput' placeholder='Name' name='name' value={this.state.name} onChange={e => this.createHandleChange(e)} />
 
-                        Pet Image: 
-                        <input name='imgUrl' value={this.state.imgUrl} onChange={e => this.createHandleChange(e)} />
+                        
+                        <input className='addCatInput' placeholder='Image' name='imgUrl' value={this.state.imgUrl} onChange={e => this.createHandleChange(e)} />
 
-                        Pet Description:
-                        <input name='petDescription' value={this.state.petDescription} onChange={e => this.createHandleChange(e)} />
+                        
+                        <input className='addCatInput' placeholder='Description' name='petDescription' value={this.state.petDescription} onChange={e => this.createHandleChange(e)} />
 
-                        <button onClick={e => this.addPet(e, this.state.name, this.state.imgUrl)}>Add Pet!</button>
-                    </Card> 
+                    </div> 
+                        <Fab id='addCatButton' color="primary" aria-label="Add">
+                        <Icon onClick={e => this.addPet(e, this.state.name, this.state.imgUrl)}>add_icon</Icon>
+                        </Fab>
                 </div>
 
 
@@ -145,13 +147,13 @@ import axios from 'axios';
 
                         <div id='blogButtons'>
                             <div>
-                            <Fab id='blogTrashcan' style={{outline: 'none', height: 20, width: 40, marginLeft: 4, marginRight: 2}} color='primary'>
+                            <Fab id='blogTrashcan' color='primary'>
                             <Icon onClick={() => this.deletePet(pet.id)}>delete_icon</Icon>
                             </Fab>
                             </div>
 
                             <div>
-                            <Fab style={{outline: 'none', height: 20, width: 40, marginLeft: 4, marginRight: 2}} color="secondary" aria-label="Edit">
+                            <Fab id='blogEdit' color="secondary" aria-label="Edit">
 
                                 <Icon onClick={this.toggle} onClick={() => this.openEditor(index)}>{this.props.buttonLabel}edit_icon</Icon>
                             </Fab>
@@ -162,14 +164,15 @@ import axios from 'axios';
                             {/* FORM TO EDIT PET, OPEN & CLOSE EDITOR */}
                             {this.state.editorOpen && this.state.editorIndex === index
                                 ?
-                                <form>
+                                <form id='editForm'>
                                     <h3>{this.state.toEdit}</h3>
-                                    <input name='catname' value={pet.catname} onChange={e => {this.handleChange(e, index)}} />
-                                    <input name='img' value={pet.img} onChange={e => {this.handleChange(e, index)}}
+                                    <input className='editCat' name='catname' value={pet.catname} onChange={e => {this.handleChange(e, index)}} 
                                     />
-                                    <input name='description' value={pet.description} onChange={e => {this.handleChange(e, index)}} 
+                                    <input className='editCat' name='img' value={pet.img} onChange={e => {this.handleChange(e, index)}}
                                     />
-                                    <Button onClick={e => this.editPet(e, pet)}>Submit</Button>
+                                    <input className='editCat' name='description' value={pet.description} onChange={e => {this.handleChange(e, index)}} 
+                                    />
+                                    <Button className='editCat' onClick={e => this.editPet(e, pet)}>Submit</Button>
                                 </form>
                                 :
                                 null

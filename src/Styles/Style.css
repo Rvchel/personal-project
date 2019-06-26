@@ -203,6 +203,21 @@ img {
   display: flex;
 }
 
+#blogTrashcan {
+  outline: none; 
+  height: 4vh; 
+  width: 4vw; 
+  margin-left: 5vw;
+  margin-right: .5vw;
+}
+
+#blogEdit {
+  outline: none;
+  height: 4vh; 
+  width: 3.5vw; 
+  margin-right: .5vw;
+}
+
 #clubHomeButton {
   color: white;
   font-family: 'Poppins', sans-serif;
@@ -246,6 +261,45 @@ img {
   padding-top: 2vh;
   padding-left: 1vw;
 }
+
+.editCat {
+  border-radius: 20;
+  z-index: 1;
+}
+
+#editForm {
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+}
+
+#addCat {
+  color: white;
+  margin-top: 4vh; 
+  margin-right: 30vw; 
+  margin-left: 30vw;
+  display: flex;
+  flex-direction: column;
+  /* background-image: url('https://images.pexels.com/photos/1605482/pexels-photo-1605482.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') */
+}
+
+#addCatButton {
+  height: 4.5vh;
+  width: 3.5vw;
+  color: white;
+  margin-top: -15vh; 
+  margin-right: 30vw; 
+  margin-left: 72.5vw;
+}
+
+.addCatInput {
+  border: white solid 1px;
+  border-radius: 25px;
+  outline: none;
+  margin-bottom: 1vh;
+}
+
+/* #√  */
 
 /* RESPONSIVENESS */
 @media (max-width: 900px) {
