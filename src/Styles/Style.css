@@ -175,7 +175,7 @@ img {
 #blogButtons {
   display: flex;
   justify-content: flex-end;
-  margin-top: 19vh;
+  margin-top: 18.5vh;
 }
 
 #galleryHomeButton {
@@ -213,19 +213,38 @@ img {
 }
 
 #clubHomeButton:hover {
-  color: rgb(95, 89, 89);
+  color: rgb(59, 56, 56);
 }
 
 #catzClub {
   font-family: 'Pacifico', cursive;
-  color: rgb(235, 235, 235);
+  /* color: rgb(235, 235, 235); */
+  color: rgb(59, 56, 56);
   font-size: 30px;
   border-right: solid white 1px;
   padding-right: 20px;
+  padding-left: 3vw;
+  padding-top: .25vh;
 }
 
 #clubContainer {
   display: flex;
+}
+
+#catName {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  border-bottom: solid white 1px;
+  display: flex;
+  justify-content: center;
+}
+
+#catDescription {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  height: 2vh;
+  padding-top: 2vh;
+  padding-left: 1vw;
 }
 
 /* RESPONSIVENESS */

@@ -42,7 +42,6 @@ class Dashboard extends Component {
                 <div>
                 <Link to='/'><button>Home</button></Link>
                 <Link to='/cart'><button id='cartButton'>Cart</button></Link>
-                <button>Checkout</button>
 
                 <div id='productContainer'>{this.state.products.map((products, index)=> (
 

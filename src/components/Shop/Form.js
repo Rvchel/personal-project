@@ -138,22 +138,22 @@ import axios from 'axios';
                                                                 marginTop: 5, 
                                                                 marginLeft: 90}} />
                             
-                            <h2 style={{color: 'white'}}
+                            <h2 id='catName'
                             >{pet.catname}</h2>
-                            <h2 style={{color: 'white', height: 10}}
+                            <h2 id='catDescription'
                             >{pet.description}</h2>
 
                         <div id='blogButtons'>
                             <div>
                             <Fab id='blogTrashcan' style={{outline: 'none', height: 20, width: 40, marginLeft: 4, marginRight: 2}} color='primary'>
-                            <Icon style={{borderRadius: 90}} onClick={() => this.deletePet(pet.id)}>delete_icon</Icon>
+                            <Icon onClick={() => this.deletePet(pet.id)}>delete_icon</Icon>
                             </Fab>
                             </div>
 
-                            
-                            <div style={{}}>
+                            <div>
                             <Fab style={{outline: 'none', height: 20, width: 40, marginLeft: 4, marginRight: 2}} color="secondary" aria-label="Edit">
-                                <Icon onClick={() => this.openEditor(index)}>edit_icon</Icon>
+
+                                <Icon onClick={this.toggle} onClick={() => this.openEditor(index)}>{this.props.buttonLabel}edit_icon</Icon>
                             </Fab>
                             </div>
                         </div>

@@ -20,6 +20,8 @@ class Cart extends Component {
         console.log(this.props.user)
         return (
             <div>
+                <Link to='/'><button>Home</button></Link>
+                <button>Checkout</button>
 
                 <div id='cartContainer'>
                     {this.props.user
@@ -51,7 +53,6 @@ class Cart extends Component {
 
                 <div style={{color: 'white'}}>{parseFloat(Math.round(this.props.user.total * 100) / 100).toFixed(2)}</div>
                 {console.log(this.props.user.total)}
-                <Link to='/'><button>Home</button></Link>
 
             </div>
         )
