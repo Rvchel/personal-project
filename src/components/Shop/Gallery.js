@@ -17,7 +17,10 @@ class Gallery extends Component {
         return (
 
             <div>
-                <Link to='/'><button>Home</button></Link>
+                <div id='blogContainer'>
+                    <div id='catzBlog'>Catz</div>
+                    <Link to='/'><button id='galleryHomeButton'>HOME</button></Link>
+                </div>
                 
                 <div>
                 

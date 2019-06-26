@@ -104,7 +104,23 @@ import axios from 'axios';
             // console.log(this.state.img)
             console.log(this.state.pets)
             return (
-                <div> 
+                <div>
+
+                <div> <Card color='dark' style={{marginTop: 450, marginRight:           400, marginLeft: 400}}>
+                        Pet name:
+                        <input name='name' value={this.state.name} onChange={e => this.createHandleChange(e)} />
+
+                        Pet Image: 
+                        <input name='imgUrl' value={this.state.imgUrl} onChange={e => this.createHandleChange(e)} />
+
+                        Pet Description:
+                        <input name='petDescription' value={this.state.petDescription} onChange={e => this.createHandleChange(e)} />
+
+                        <button onClick={e => this.addPet(e, this.state.name, this.state.imgUrl)}>Add Pet!</button>
+                    </Card> 
+                </div>
+
+
                 <div style={{display: 'flex', flexFlow: 'row', display: 'flex', flexWrap: 'wrap'}}>
                     {this.state.pets.map((pet, index) => (
                         this.state.pets.length 
@@ -164,7 +180,7 @@ import axios from 'axios';
                     ))} </div>
 
                     {/* ADDING PET */}
-                <div> <Card color='dark' style={{marginTop: 450, marginRight: 400, marginLeft: 400}}>
+                {/* <div> <Card color='dark' style={{marginTop: 450, marginRight: 400, marginLeft: 400}}>
                         Pet name:
                         <input name='name' value={this.state.name} onChange={e => this.createHandleChange(e)} />
 
@@ -176,7 +192,7 @@ import axios from 'axios';
 
                         <button onClick={e => this.addPet(e, this.state.name, this.state.imgUrl)}>Add Pet!</button>
                     </Card> 
-                </div>
+                </div> */}
 
 
 

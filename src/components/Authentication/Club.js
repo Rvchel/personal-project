@@ -76,7 +76,11 @@ class Club extends Component {
             <div style={{backgroundImage: 'url(https://images.pexels.com/photos/1938031/pexels-photo-1938031.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500)',
             height: 700, width: 700}}>
                 
-                <Link to='/'><Button style={{fontFamily: 'Poppins, sans-serif'}} outline color="light">Home</Button></Link>
+                <div id='clubContainer'>
+                <div id='catzClub'>Catz Club</div>
+                <Link to='/'><button id='clubHomeButton'>HOME</button></Link>
+                </div>
+                {/* <Link to='/'><Button style={{fontFamily: 'Poppins, sans-serif'}} outline color="light">Home</Button></Link> */}
                 {/* <Link to='/login'><button>Login</button></Link> */}
                 {/* <Link to='/register'><button>Register</button></Link> */}
                 
