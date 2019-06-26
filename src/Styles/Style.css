@@ -175,14 +175,34 @@ img {
 #blogButtons {
   display: flex;
   justify-content: flex-end;
-  margin-top: 18vh;
+  margin-top: 19vh;
 }
-
 
 /* RESPONSIVENESS */
 @media (max-width: 900px) {
+  .catCareImage {
+    width: 20vw;
+    height: 17vh;
+  }
+  .whiteDiv {
+    width: 5vw;
+    height: 6vh;
+    margin-right: -10vw;
+  }
+  #whiteDivContainer {
+    height: 20vh;
+    width: 40vw;
+    margin-right: 50vw;
+    display: flex;
+    justify-content: space-between;
+  }
   #Catz {
-    display: none;
+    border: none;
+    font-size: 10vw;
+  }
+  #clubContainer {
+    display: flex;
+    margin-left: 20vw; 
   }
   #mainButtons {
     display: none;

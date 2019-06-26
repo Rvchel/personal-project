@@ -126,9 +126,10 @@ import axios from 'axios';
                             >{pet.catname}</h2>
                             <h2 style={{color: 'white', height: 10}}
                             >{pet.description}</h2>
+
                         <div id='blogButtons'>
                             <div>
-                            <Fab style={{outline: 'none', height: 20, width: 40, marginLeft: 4, marginRight: 2}} color='primary'>
+                            <Fab id='blogTrashcan' style={{outline: 'none', height: 20, width: 40, marginLeft: 4, marginRight: 2}} color='primary'>
                             <Icon style={{borderRadius: 90}} onClick={() => this.deletePet(pet.id)}>delete_icon</Icon>
                             </Fab>
                             </div>
