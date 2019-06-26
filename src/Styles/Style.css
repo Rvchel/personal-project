@@ -205,7 +205,7 @@ img {
 
 #blogTrashcan {
   outline: none; 
-  height: 4vh; 
+  height: 4.5vh; 
   width: 4vw; 
   margin-left: 5vw;
   margin-right: .5vw;
@@ -287,7 +287,7 @@ img {
   height: 4.5vh;
   width: 3.5vw;
   color: white;
-  margin-top: -15vh; 
+  margin-top: -20vh; 
   margin-right: 30vw; 
   margin-left: 72.5vw;
 }
@@ -297,6 +297,7 @@ img {
   border-radius: 25px;
   outline: none;
   margin-bottom: 1vh;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* #√  */

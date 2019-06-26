@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {getUser, removeFromCart} from '../../redux/reducer';
+import StripeCheckout from 'react-stripe-checkout'
+import {toast} from 'react-toastify';
+import axios from 'axios';
+
 
 class Cart extends Component {
     constructor(props) {
@@ -9,6 +13,7 @@ class Cart extends Component {
         this.state = {
             
         }
+        this.handleToken = this.handleToken.bind(this);
     }
 
     componentDidMount() {
@@ -16,12 +21,35 @@ class Cart extends Component {
         // this.props.removeFromCart()
     }
 
+    //stripe
+    async handleToken(token) {
+        console.log({token})
+        let {cart, total} = this.props.user
+        const response = await axios.post('/api/checkout', {token, cart, total});
+        const {status} = response.data
+        console.log(status)
+        if(status === 'success') {
+            toast('Success! Check email for details.', {type: "success"})
+        } else {
+            toast('Something went wrong...', {type: 'error'})
+        }
+    }
+
     render() {
         console.log(this.props.user)
+        let {total, cart, user} = this.props.user
         return (
             <div>
                 <Link to='/'><button>Home</button></Link>
                 <button>Checkout</button>
+                <StripeCheckout
+                        stripeKey='pk_test_7UPcgjT9ckqzezpfx7yHq6Hm00EIr2MpDt'
+                        token={this.handleToken}
+                        billingAddress
+                        shippingAddress
+                        amount={total *100}
+                        name={'Catz'}
+                    />
 
                 <div id='cartContainer'>
                     {this.props.user
