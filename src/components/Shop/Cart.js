@@ -42,18 +42,25 @@ class Cart extends Component {
         let {total, cart, user} = this.props.user
         return (
             <div>
-                <Link to='/'><button>Home</button></Link>
-                <button>Checkout</button>
-                <StripeCheckout
+                <div id='cartConatiner'>
+                <div id='cartCatz'>Catz</div>
+                <Link to='/'><button id='cartHomeButton'>HOME</button></Link>
+            </div>
+
+            <div id='checkoutButtonsContainer'>
+                        <div id='cartCheckoutText'>CHECKOUT</div>
+                        <div id='cartTotal'>Cart Total: ${parseFloat(Math.round(this.props.user.total * 100) / 100).toFixed(2)}</div>
+                        {console.log(this.props.user.total)}
+                
+                <div id='stripeButton'><StripeCheckout
                         stripeKey='pk_test_7UPcgjT9ckqzezpfx7yHq6Hm00EIr2MpDt'
                         token={this.handleToken}
                         billingAddress
                         shippingAddress
                         amount={total *100}
                         name={'Catz'}
-                    />
-                        <div id='cartTotal'>Total: ${parseFloat(Math.round(this.props.user.total * 100) / 100).toFixed(2)}</div>
-                        {console.log(this.props.user.total)}
+                    /></div>
+            </div>
 
                 <div id='cartContainer'>
                     {this.props.user
@@ -64,20 +71,22 @@ class Cart extends Component {
                                 return(
                                     <div key={index}>
 
-                                <div id='cartImageContainer'>
-                                    <img id='cartImage' src={item[0].image} />
-                                </div>
-                                <div id='cartDescriptionContainer'>
-                                    {item[0].description}
-                                </div>
-                                <div id='cartPriceContainer'>
-                                    ${item[0].price}
-                                </div>
-                                    
-
-                                <div id='cartDeleteButton'>
-                                    <button id='cartDeleteButton' onClick={() => this.props.removeFromCart(this.props.id, this.props.price)}>Delete</button>
-                                </div>
+    <div id='cartInfoContainer'>
+        <div>
+            <img id='cartImage' src={item[0].image} />
+        </div>
+    <div id='imageInfoContainer'>
+        <div id='cartDescriptionContainer'>
+            {item[0].description}
+        </div>
+        <div id='cartPriceContainer'>
+            ${item[0].price}
+        </div>
+        <div id='cartDeleteButton'>
+            <button id='cartDeleteButton' onClick={() => this.props.removeFromCart(this.props.id, this.props.price)}>Delete</button>
+        </div>
+    </div> 
+    </div>      
 
                                     </div>
                                 )
