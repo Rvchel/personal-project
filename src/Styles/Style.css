@@ -317,13 +317,18 @@ img {
   background-color: white;
   margin-left: 30vw;
   width: 50vw;
+  margin-bottom: 2vh;
   /* border: solid black 1px; */
 }
 
 #imageInfoContainer {
+  margin-left: 20vw;
+  position: relative;
+  top: -15vh;
+  /* margin-top: -20vh; */
   /* border: solid black 1px; */
   color:black;
-  z-index: -1;
+  z-index: 1;
 }
 
 /* #cartInfoContainer {
@@ -333,6 +338,8 @@ img {
 } */
 
 #cartPriceContainer {
+  /* margin-left: 20vw; */
+  /* margin-top: 30vh; */
 }
 
 #cartDescriptionContainer {
