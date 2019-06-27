@@ -24,7 +24,7 @@ class Cart extends Component {
     //stripe
     async handleToken(token) {
         console.log({token})
-        console.log(status)
+        // console.log(status)
 
         let {cart, total} = this.props.user
         const response = await axios.post('/api/checkout', {token, cart, total})
@@ -52,6 +52,8 @@ class Cart extends Component {
                         amount={total *100}
                         name={'Catz'}
                     />
+                        <div id='cartTotal'>Total: ${parseFloat(Math.round(this.props.user.total * 100) / 100).toFixed(2)}</div>
+                        {console.log(this.props.user.total)}
 
                 <div id='cartContainer'>
                     {this.props.user
@@ -62,11 +64,20 @@ class Cart extends Component {
                                 return(
                                     <div key={index}>
 
+                                <div id='cartImageContainer'>
+                                    <img id='cartImage' src={item[0].image} />
+                                </div>
+                                <div id='cartDescriptionContainer'>
                                     {item[0].description}
-                                    <img src={item[0].image} />
+                                </div>
+                                <div id='cartPriceContainer'>
                                     ${item[0].price}
+                                </div>
+                                    
 
-                                    <button onClick={() => this.props.removeFromCart(this.props.id, this.props.price)}>Delete</button>
+                                <div id='cartDeleteButton'>
+                                    <button id='cartDeleteButton' onClick={() => this.props.removeFromCart(this.props.id, this.props.price)}>Delete</button>
+                                </div>
 
                                     </div>
                                 )
@@ -80,9 +91,6 @@ class Cart extends Component {
                     }
                 
                 </div>
-
-                <div style={{color: 'white'}}>{parseFloat(Math.round(this.props.user.total * 100) / 100).toFixed(2)}</div>
-                {console.log(this.props.user.total)}
 
             </div>
         )

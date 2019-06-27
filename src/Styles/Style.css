@@ -300,6 +300,35 @@ img {
   font-family: 'Poppins', sans-serif;
 }
 
+#cartImage {
+  max-width: 20vw;
+  max-height: 30vh;
+}
+
+#cartContainer {
+  display: flex;
+  padding-left: 40vw; 
+  flex-direction: column;
+  margin-top: 10vh;
+}
+
+#cartPriceContainer {
+}
+
+#cartDescriptionContainer {
+}
+
+#cartDeleteButton {
+  margin-bottom: 2vh;
+}
+
+#cartTotal {
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -5vh;
+}
+
 /* #√  */
 
 /* RESPONSIVENESS */
