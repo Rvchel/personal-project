@@ -27,11 +27,16 @@ export function addToCart(product, price) {
     }
 }
 
-//Hopfully make this remove an item from user cart
-export function removeFromCart(id, price) {
+// export function removeFromCart(id, price) {
+//     return {
+//         type: REMOVE_FROM_CART,
+//         payload: axios.delete(`/api/cart/${id}`, {price})
+//     }
+// }
+export const removeFromCart = (id) => {
     return {
         type: REMOVE_FROM_CART,
-        payload: axios.delete(`/api/cart/${id}`, {price})
+        payload: axios.delete(`/api/cart/${id}`)
     }
 }
 
@@ -57,10 +62,18 @@ export default function reducer(state = initialState, action) {
             user: action.payload.data
         }
 
+        //Added
+        case `${REMOVE_FROM_CART}_PENDING`:
+        return {
+            ...state,
+            loading: true
+        }
+
         case `${REMOVE_FROM_CART}_FULFILLED`:
         return {
             ...state,
-            user: action.payload.data
+            user: action.payload.data,
+            loading: false
         }
 
         default: return state;

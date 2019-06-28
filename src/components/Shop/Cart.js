@@ -11,7 +11,7 @@ class Cart extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            
+            total: 0
         }
         this.handleToken = this.handleToken.bind(this);
     }
@@ -38,7 +38,7 @@ class Cart extends Component {
         }
 
     render() {
-        console.log(this.props.user)
+        // console.log(this.props.user)
         let {total, cart, user} = this.props.user
         return (
             <div>
@@ -83,7 +83,8 @@ class Cart extends Component {
             ${item[0].price}
         </div>
         <div id='cartDeleteButton'>
-            <button id='cartDeleteButton' onClick={() => this.props.removeFromCart(this.props.id, this.props.price)}>Delete</button>
+        <button onClick={() => {this.props.removeFromCart(index)}}>Delete</button>
+            {/* <button id='cartDeleteButton' onClick={() => {this.props.removeFromCart(this.props.id, this.props.price); console.log(item)}}>Delete</button> */}
         </div>
     </div> 
     </div>      
