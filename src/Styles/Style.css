@@ -245,6 +245,34 @@ img {
 #clubContainer {
   display: flex;
 }
+#clubBackgroundImage {
+  background-image: url('https://images.pexels.com/photos/1938031/pexels-photo-1938031.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
+  height: 100vh;
+  width: 60vw;
+}
+
+#catzClubText {
+  margin-left: 70vw;
+  color: white;
+  font-size: 17vh; 
+  margin-top: -15vh; 
+  font-family: Pacifico, cursive;
+}
+
+#registerButtonModal {
+  font-family: Poppins, sans-serif; 
+  margin-right: 9vw; 
+  margin-left: 9vw;
+}
+
+#logoutButton {
+  display: flex; 
+  margin-top: 40vh;
+}
+
+#loginButtonModal {
+  font-family: Poppins, sans-serif;
+}
 
 #catName {
   color: white;
@@ -417,20 +445,51 @@ img {
 
 /* RESPONSIVENESS */
 @media (max-width: 900px) {
+  /* CLUB */
+  #clubBackgroundImage {
+    /* display: none; */
+    width: 100vw;
+    height: 30vh;
+  }
+  #loginButtonModal {
+    /* margin-left: -70vw; */
+  }
+  #logoutButton {
+    display: flex;
+    margin-left: -30vw;
+    margin-top: 15vh;
+  }
+  #registerButtonModal { 
+    margin-right: 7vw; 
+    margin-left: 7vw;
+  }
+  #catzClubText {
+    margin-left: 25vw;
+    margin-top: 5vh;
+    font-size: 10vh;
+  }
+  #catzClub {
+    font-size: 10vh;
+    border-right: none;
+  }
+
+
+  /* HOME */
   #friendText {
-    font-size: 3.5vw;
+    font-size: 5vw;
+    margin-left: 4vw;
   }
   .catCareImage {
-    width: 20vw;
-    height: 17vh;
+    width: 30vw;
+    height: 15vh;
   }
   .whiteDiv {
-    width: 5vw;
-    height: 6vh;
-    margin-right: -10vw;
+    width: 7vw;
+    height: 8vh;
+    margin-right: -40vw;
   }
   #whiteDivContainer {
-    height: 20vh;
+    height: 10vh;
     width: 40vw;
     margin-right: 50vw;
     display: flex;
@@ -438,7 +497,8 @@ img {
   }
   #Catz {
     border: none;
-    font-size: 10vw;
+    font-size: 20vw;
+    margin-left: 4.5vw;
   }
   #clubContainer {
     display: flex;
@@ -446,14 +506,16 @@ img {
   }
   #mainButtons {
     margin: 0;
-    font-size: 2vw;
+    font-size: 4vw;
     display: flex;
     justify-content: flex-start;
-    margin-top: 10vh;
-    margin-left: 1vw;
+    margin-top: 7vh;
+    margin-left: 10vw;
   }
   #catClubButton {
-    display: none;
+    font-size: 3vw;
+    margin-left: 6vw;
+    margin-top: -2vh;
   }
   #carouselContainer {
     display: none;

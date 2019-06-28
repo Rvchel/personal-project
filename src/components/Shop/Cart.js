@@ -11,6 +11,8 @@ class Cart extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            cart: [],
+            user: {},
             total: 0
         }
         this.handleToken = this.handleToken.bind(this);
@@ -18,13 +20,10 @@ class Cart extends Component {
 
     componentDidMount() {
         this.props.getUser()
-        // this.props.removeFromCart()
     }
 
     //stripe
     async handleToken(token) {
-        console.log({token})
-        // console.log(status)
 
         let {cart, total} = this.props.user
         const response = await axios.post('/api/checkout', {token, cart, total})
@@ -50,7 +49,6 @@ class Cart extends Component {
             <div id='checkoutButtonsContainer'>
                         <div id='cartCheckoutText'>CHECKOUT</div>
                         <div id='cartTotal'>Cart Total: ${parseFloat(Math.round(this.props.user.total * 100) / 100).toFixed(2)}</div>
-                        {console.log(this.props.user.total)}
                 
                 <div id='stripeButton'><StripeCheckout
                         stripeKey='pk_test_7UPcgjT9ckqzezpfx7yHq6Hm00EIr2MpDt'
@@ -84,7 +82,6 @@ class Cart extends Component {
         </div>
         <div id='cartDeleteButton'>
         <button onClick={() => {this.props.removeFromCart(index)}}>Delete</button>
-            {/* <button id='cartDeleteButton' onClick={() => {this.props.removeFromCart(this.props.id, this.props.price); console.log(item)}}>Delete</button> */}
         </div>
     </div> 
     </div>      

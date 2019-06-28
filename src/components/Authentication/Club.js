@@ -73,13 +73,11 @@ class Club extends Component {
                 return <Redirect to='/'/>
             }
         return (
-            <div style={{backgroundImage: 'url(https://images.pexels.com/photos/1938031/pexels-photo-1938031.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500)',
-            height: 700, width: 700}}>
-                
+            <div id='clubBackgroundImage'>      
                 <div id='clubContainer'>
                 <div id='catzClub'>Catz Club</div>
                 <Link to='/'><button id='clubHomeButton'>HOME</button></Link>
-                </div>
+            </div>
                 {/* <Link to='/'><Button style={{fontFamily: 'Poppins, sans-serif'}} outline color="light">Home</Button></Link> */}
                 {/* <Link to='/login'><button>Login</button></Link> */}
                 {/* <Link to='/register'><button>Register</button></Link> */}
@@ -89,7 +87,7 @@ class Club extends Component {
 
 
 
-    <div style={{display: 'flex', marginTop: 250}}>
+    <div id='logoutButton'>
             <Button style={{fontFamily: 'Poppins, sans-serif', marginLeft: 150}} outline color="light" onClick={this.handleLogout}>Logout</Button>
             
 
@@ -104,7 +102,7 @@ class Club extends Component {
 
 
         <div>
-            <Button style={{fontFamily: 'Poppins, sans-serif'}} outline color="light" onClick={this.toggle}>Login{this.props.buttonLabel}</Button>{' '}
+            <Button id='loginButtonModal' outline color="light" onClick={this.toggle}>Login{this.props.buttonLabel}</Button>{' '}
             <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
             <ModalHeader style={{fontFamily: 'Poppins, sans-serif'}} toggle={this.toggle}>Login</ModalHeader>
             <ModalBody>
@@ -122,7 +120,7 @@ class Club extends Component {
             </Modal>
         </div>
     </div>
-                    <div style={{marginLeft: 840, color: 'white', fontSize: 75, marginTop: -70, fontFamily: 'Pacifico, cursive'}}>Catz</div>
+                    <div id='catzClubText'>Catz</div>
             </div>
         )
     }

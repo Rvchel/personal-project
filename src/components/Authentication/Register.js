@@ -56,7 +56,7 @@ class Register extends Component {
             <div>
 
         <div>
-            <Button style={{fontFamily: 'Poppins, sans-serif', marginRight: 90, marginLeft: 90}}outline color="light" onClick={this.toggle}>Register{this.props.buttonLabel}</Button>{' '}
+            <Button id='registerButtonModal' outline color="light" onClick={this.toggle}>Register{this.props.buttonLabel}</Button>{' '}
             <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
             <ModalHeader style={{fontFamily: 'Poppins, sans-serif'}} toggle={this.toggle}>Create Account</ModalHeader>
             <ModalBody>

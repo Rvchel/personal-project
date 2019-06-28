@@ -54,9 +54,6 @@ class Dashboard extends Component {
 
                 ))}</div> </div> </div>
 
-                {/* Might add form for new products? */}
-                {/* <Form /> */}
-
             </div>
         )
     }
