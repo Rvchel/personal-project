@@ -37,8 +37,13 @@ class Cart extends Component {
         }
 
     render() {
-        // console.log(this.props.user)
-        let {total, cart, user} = this.props.user
+        console.log(this.props.user)
+        let total = 0
+        // let cart = []
+        if(this.props.user){
+            total = this.props.user.total
+        }
+        
         return (
             <div>
                 <div id='cartConatiner'>
@@ -48,7 +53,7 @@ class Cart extends Component {
 
             <div id='checkoutButtonsContainer'>
                         <div id='cartCheckoutText'>CHECKOUT</div>
-                        <div id='cartTotal'>Cart Total: ${parseFloat(Math.round(this.props.user.total * 100) / 100).toFixed(2)}</div>
+                        <div id='cartTotal'>Cart Total: ${parseFloat(Math.round(total * 100) / 100).toFixed(2)}</div>
                 
                 <div id='stripeButton'><StripeCheckout
                         stripeKey='pk_test_7UPcgjT9ckqzezpfx7yHq6Hm00EIr2MpDt'
@@ -93,7 +98,7 @@ class Cart extends Component {
                         //Add items to cart
                             null
                     :
-                    //Please log in
+                    //<h1>Please log in</h1>
                         null
                     }
                 
