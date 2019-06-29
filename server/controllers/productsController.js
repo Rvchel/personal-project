@@ -11,5 +11,12 @@ module.exports = {
             console.log(error)
             res.status(500).send(error)
         })
+    },
+
+    getProductCategory: (req, res) => {
+        const db = req.app.get('db')
+
+        db.getProductCategory()
+        .filter()
     }
 }

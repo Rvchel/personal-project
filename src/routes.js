@@ -9,6 +9,7 @@ import Cart from './components/Shop/Cart';
 import Gallery from './components/Shop/Gallery';
 import Form from './components/Shop/Form';
 import Admin from './components/Authentication/Admin';
+import About from './components/Shop/About';
 
 export default (
     <Switch>
@@ -19,8 +20,7 @@ export default (
         <Route path={'/dashboard'} component={Dashboard} />
         <Route path={'/cart'} component={Cart}/>
         <Route path={'/gallery'} component={Gallery} />
-        {/* <Route exact path="/form" component={Form} />
-        <Route path="/edit/:id" component={Form} /> */}
         <Route path={'/admin'} component={Admin} />
+        <Route path={'/about'} component={About} />
     </Switch>
 );

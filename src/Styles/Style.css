@@ -108,9 +108,12 @@ img {
 }
 
 #addToCart {
+  margin-left: -1.3vw;
+  margin-top: -2vh;
   color: #139cd3;
   background: transparent;
   border: none;
+  outline: none;
 }
 
 #cartContainer {
@@ -118,6 +121,7 @@ img {
   flex-direction: row;
 }
 
+/* ADMIN */
 .adminPage {
   color: white;
 }
@@ -131,6 +135,7 @@ img {
   margin-bottom: 2vh;
 }
 
+/* HOME */
 #catCareText {
   color: white;
   font-family: 'NTR', sans-serif;
@@ -172,6 +177,7 @@ img {
   max-width: 30vw;
 }
 
+/* GALLERY */
 #blogButtons {
   display: flex;
   justify-content: flex-end;
@@ -218,6 +224,7 @@ img {
   margin-right: .5vw;
 }
 
+/* CLUB */
 #clubHomeButton {
   color: white;
   font-family: 'Poppins', sans-serif;
@@ -274,6 +281,7 @@ img {
   font-family: Poppins, sans-serif;
 }
 
+/* FORM/GALLERY */
 #catName {
   color: white;
   font-family: 'Poppins', sans-serif;
@@ -328,6 +336,63 @@ img {
   font-family: 'Poppins', sans-serif;
 }
 
+/* DASHBOARD */
+#cartIcon {
+  height: 8vh;
+  width: 5vw;
+  margin-left: 37.5vw;
+  margin-top: .5vh;
+}
+
+#productContainer {
+  margin-top: 10vh;
+  /* margin-left: 30vw; */
+  /* border-left: solid white 1px; */
+}
+
+#mainDashboardContainer {
+  color: white;
+  margin-left: 20vw;
+  border-left: solid white 1px;
+  height: 100vh;
+}
+
+#dashMainButtons {
+  display: flex;
+  margin-left: -20vw;
+  width: 20vw;
+  /* border-right: solid white 1px; */
+  /* height: 50vh; */
+  /* color: white; */
+  /* font-family: 'Pacifico', cursive; */
+}
+
+#dashboardCatz {
+  color: white;
+  font-family: 'Pacifico', cursive;
+  font-size: 50px;
+  border-right: solid rgb(56, 52, 52) 1px;
+  padding-right: 40px;
+}
+
+#dashboardHomeButton {
+  color: rgb(95, 89, 89);
+  font-family: 'Poppins', sans-serif;
+  background-color: transparent;
+  border: none;
+  margin-left: 1vw;
+  margin-top: 3vh; 
+}
+
+#dashboardHomeButton:hover {
+  color: white;
+}
+
+#cartButton {
+  margin-left: 38vw;
+}
+
+/* CART */
 #cartImage {
   max-width: 20vw;
   max-height: 30vh;
@@ -358,12 +423,6 @@ img {
   color:black;
   z-index: 1;
 }
-
-/* #cartInfoContainer {
-  width: 20vw;
-  height: 20vh;
-  border: black solid 1px;
-} */
 
 #cartPriceContainer {
   /* margin-left: 20vw; */
@@ -411,6 +470,14 @@ img {
   display: flex;
 }
 
+#pleaseLogIn {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-top: -35vh;
+  margin-right: 10vw;
+}
+
 #stripeButton {
   display: flex;
   margin-top: 4vh;
@@ -439,6 +506,34 @@ img {
   flex-direction: column;
   width: 20vw;
   height: 20vh;
+}
+
+/* ABOUT */
+#aboutCatz {
+  color: white;
+  font-family: 'Pacifico', cursive;
+  font-size: 50px;
+  border-right: solid rgb(56, 52, 52) 1px;
+  padding-right: 40px;
+}
+
+#aboutHomeButton {
+  color: rgb(95, 89, 89);
+  font-family: 'Poppins', sans-serif;
+  background-color: transparent;
+  border: none;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+#aboutHomeButton:hover {
+  color: white;
+}
+
+#aboutContainer {
+    display: flex;
+    color: white;
+    font-family: 'Pacifico', cursive;
 }
 
 /* #√  */

@@ -2,11 +2,13 @@ require('dotenv').config();
 const express = require('express');
 const massive = require('massive');
 const session = require('express-session');
-const {getProducts} = require('./controllers/productsController');
+const {getProducts, getProductCategory} = require('./controllers/productsController');
 const {registerUser, loginUser, getUser, logoutUser} = require('./controllers/authController');
 const {addToCart, removeFromCart} = require('./controllers/cartController');
 const {editCat, deleteCat, addCat, getCat} = require('./controllers/catController');
+const mailController = require('./controllers/mailController');
 const {getAllOrders} = require('./controllers/ordersController');
+const nodemailer = require('nodemailer');
 
 const app = express();
 
@@ -28,6 +30,7 @@ app.use(session({
 
 //product endpoints
 app.get('/api/products', getProducts);
+app.get('api/products/filter', getProductCategory);
 
 //cart
 app.post('/api/cart/:product', addToCart);
@@ -48,6 +51,40 @@ app.put('/api/pet/:id', editCat);
 
 //orders
 app.get('/api/orders', getAllOrders);
+
+//nodemailer
+app.post('/send', (req, res, next) => {
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'catz@gmail.com',
+            pass: 'Potatoes'
+        }
+    })
+    var name = req.body.name
+    var email = req.body.email
+    var message = req.body.message
+    var content = `name: ${name} \n email: ${email} \n message: ${message} `
+
+        var mail = {
+        from: name,
+            to: `${email}`,  //Change to email address that you want to receive messages on
+            subject: 'New Message from Contact Form',
+            text: content
+    }
+
+    transporter.sendMail(mail, (err, data) => {
+        if (err) {
+                res.json({
+                msg: 'fail'
+            })
+                } else {
+                    res.json({
+                    msg: 'success'
+                })
+            }
+        })
+    })
 
 //Stripe
 const stripe = require('stripe')('sk_test_OtKDrvTUWiTxwblRzA6ashZR00NoebjoJc')

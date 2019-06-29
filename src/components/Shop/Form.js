@@ -117,7 +117,7 @@ import axios from 'axios';
                         <input className='addCatInput' placeholder='Description' name='petDescription' value={this.state.petDescription} onChange={e => this.createHandleChange(e)} />
 
                     </div> 
-                        <Fab id='addCatButton' color="primary" aria-label="Add">
+                        <Fab id='addCatButton' style={{color: 'black', outline: 'none'}} aria-label="Add">
                         <Icon onClick={e => this.addPet(e, this.state.name, this.state.imgUrl)}>add_icon</Icon>
                         </Fab>
                 </div>
@@ -133,12 +133,13 @@ import axios from 'axios';
                                     marginLeft: 30,
                                     marginTop: 40
                                     }} color='dark'key={index}>
-                            <div><img src={pet.img} style={{width: 170,
+                            <div><img src={pet.img} style={{width: 180,
                                                                 height: 170,
                                                                 marginBottom: 30,
                                                                 borderRadius: 100,
                                                                 marginTop: 5, 
-                                                                marginLeft: 90}} />
+                                                                marginLeft: 90,
+                                                                }} />
                             
                             <h2 id='catName'
                             >{pet.catname}</h2>
@@ -147,7 +148,7 @@ import axios from 'axios';
 
                         <div id='blogButtons'>
                             <div>
-                            <Fab id='blogTrashcan' color='primary'>
+                            <Fab id='blogTrashcan' style={{}}>
                             <Icon onClick={() => this.deletePet(pet.id)}>delete_icon</Icon>
                             </Fab>
                             </div>
@@ -181,30 +182,6 @@ import axios from 'axios';
                             :
                             null
                     ))} </div>
-
-                    {/* ADDING PET */}
-                {/* <div> <Card color='dark' style={{marginTop: 450, marginRight: 400, marginLeft: 400}}>
-                        Pet name:
-                        <input name='name' value={this.state.name} onChange={e => this.createHandleChange(e)} />
-
-                        Pet Image: 
-                        <input name='imgUrl' value={this.state.imgUrl} onChange={e => this.createHandleChange(e)} />
-
-                        Pet Description:
-                        <input name='petDescription' value={this.state.petDescription} onChange={e => this.createHandleChange(e)} />
-
-                        <button onClick={e => this.addPet(e, this.state.name, this.state.imgUrl)}>Add Pet!</button>
-                    </Card> 
-                </div> */}
-
-
-
-                    {/* <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
-                        <CardTitle>Special Title Treatment</CardTitle>
-                        <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                        <Button>Button</Button>
-                    </Card> */}
-
 
                 </div>
 

@@ -40,7 +40,7 @@ class Home extends Component {
                 <div id='mainButtons'>
                 <Link to='/dashboard'><button className='homeButton'>PRODUCTS</button></Link>
                 <button className='homeButton'>BREEDS</button>
-                <button className='homeButton'>ABOUT</button>
+                <Link to='/about'><button className='homeButton'>ABOUT</button></Link>
                 <Link to='/gallery'><button className='homeButton'>BLOG</button></Link>
                 </div>
 

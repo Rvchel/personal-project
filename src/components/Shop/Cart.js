@@ -37,7 +37,7 @@ class Cart extends Component {
         }
 
     render() {
-        console.log(this.props.user)
+        // console.log(this.props.user)
         let total = 0
         // let cart = []
         if(this.props.user){
@@ -95,11 +95,11 @@ class Cart extends Component {
                                 )
                             })
                         :
-                        //Add items to cart
+                            // <h1>Add items to cart</h1>
                             null
                     :
-                    //<h1>Please log in</h1>
-                        null
+                        <h1 id='pleaseLogIn'>Please log in</h1>
+                        // null
                     }
                 
                 </div>
