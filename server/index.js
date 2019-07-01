@@ -6,13 +6,13 @@ const {getProducts, getProductCategory} = require('./controllers/productsControl
 const {registerUser, loginUser, getUser, logoutUser} = require('./controllers/authController');
 const {addToCart, removeFromCart} = require('./controllers/cartController');
 const {editCat, deleteCat, addCat, getCat} = require('./controllers/catController');
-const mailController = require('./controllers/mailController');
-const {getAllOrders} = require('./controllers/ordersController');
+// const {email} = require('./controllers/mailController');
 const nodemailer = require('nodemailer');
+const {getAllOrders} = require('./controllers/ordersController');
 
 const app = express();
 
-const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
+const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET, EMAIL_USER, EMAIL_PASSWORD, STRIPE_CONNECTION} = process.env
 
 app.use(express.json());
 
@@ -53,41 +53,30 @@ app.put('/api/pet/:id', editCat);
 app.get('/api/orders', getAllOrders);
 
 //nodemailer
-app.post('/send', (req, res, next) => {
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
+var transport = nodemailer.createTransport({
+        service: "gmail",
         auth: {
-            user: 'catz@gmail.com',
-            pass: 'Potatoes'
+            user: EMAIL_USER,
+            pass: EMAIL_PASSWORD
         }
-    })
-    var name = req.body.name
-    var email = req.body.email
-    var message = req.body.message
-    var content = `name: ${name} \n email: ${email} \n message: ${message} `
-
+        });
+        app.post("/nodemailer/send", (req, res, next) => {
+            console.log(req.body)
+        var { name } = req.body;
+        var { email } = req.body;
+        var { message } = req.body;
+        var content = `name: ${name} \n email: ${email} \n message: ${message} `;
         var mail = {
-        from: name,
-            to: `${email}`,  //Change to email address that you want to receive messages on
-            subject: 'New Message from Contact Form',
+            from: name,
+            to: EMAIL_USER,
+            subject: "New Custom Order Message",
             text: content
-    }
-
-    transporter.sendMail(mail, (err, data) => {
-        if (err) {
-                res.json({
-                msg: 'fail'
-            })
-                } else {
-                    res.json({
-                    msg: 'success'
-                })
-            }
-        })
-    })
+        };
+        transport.sendMail(mail);
+    });
 
 //Stripe
-const stripe = require('stripe')('sk_test_OtKDrvTUWiTxwblRzA6ashZR00NoebjoJc')
+const stripe = require('stripe')(STRIPE_CONNECTION)
 const uuid = require('uuidv4')
 
 app.post("/api/checkout", async (req, res) => {

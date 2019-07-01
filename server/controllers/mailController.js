@@ -1,21 +1,40 @@
+// const nodemailer = require('nodemailer');
+// require('dotenv').config()
 
-var nodemailer = require('nodemailer');
-const creds = require('config');
+// const {EMAIL_SERVICE, EMAIL_USER, EMAIL_PASSWORD} = process.env
 
-    var transport = {
-        host: 'smtp.gmail.com',
-        auth: {
-            user: creds.USER,
-            pass: creds.PASS
-        }
-    }
+// async function email(req, res) {
+//     console.log(req.body)
+//     const {subject, body} = req.body
 
-var transporter = nodemailer.createTransport(transport)
+//     const transporter = nodemailer.createTransport({
+//         service: EMAIL_SERVICE,
+//         auth: {
+//             user: EMAIL_USER,
+//             pass: EMAIL_PASSWORD
+//         }
+//     })
+//     // console.log(subject, body)
+//         // var content = `name: ${name} \n email: ${EMAIL_USER} \n message: ${body} `;
 
-    transporter.verify((error, success) => {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log('Server is ready to take messages');
-    }
-});
+//     let mail = {
+//         from: 'Catz',
+//         to: EMAIL_USER,
+//         subject: subject,
+//         text: body
+//     }
+
+//     transporter.sendMail(mail, (err, data)=>{
+//         if(err) {
+//             console.log('failed')
+//             res.json({msg: 'fail'})
+//             } else {
+//             console.log('Popcorn')
+//             res.json({msg: 'success'})
+//         }
+//     })
+// }
+
+// module.exports={
+//     email
+// }

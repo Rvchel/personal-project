@@ -128,7 +128,7 @@ import axios from 'axios';
                         this.state.pets.length 
                         ?
                         // DISPLAYING INFO ABOUT PET
-                        <Card style={{width: 350,
+                        <Card id='galleryCard' style={{width: 350,
                                     height: 400,
                                     marginLeft: 30,
                                     marginTop: 40
