@@ -572,6 +572,16 @@ img {
 
 
   /* CART */
+  #imageInfoContainer {
+    right: -25vw;
+  }
+  #cartInfoContainer {
+    width: 98vw;
+    margin-left: 1vw;
+  }
+  #cartImage {
+    max-width: 55vw;
+  }
   #cartCheckoutText {
     margin-left: 10vw;
     font-size: 3vh;
