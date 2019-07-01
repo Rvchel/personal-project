@@ -23,12 +23,12 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: 13px;
+  font-size: 2vh;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  margin-left: 800px;
-  margin-top: 60px;
+  margin-left: 70vw;
+  margin-top: 10vh;
   font-family: 'Poppins', sans-serif;
 }
 
