@@ -16,6 +16,8 @@ const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET, EMAIL_USER, EMAIL_PASSWOR
 
 app.use(express.json());
 
+app.use( express.static( `${__dirname}/../build` ) );
+
 app.use(session({
     secret: SESSION_SECRET,
     resave: false,
