@@ -34,6 +34,14 @@ class About extends Component {
                 <div id='aboutHomeButton'><Link to='/'><button id='aboutHomeButton'>HOME</button></Link></div>
             </div>
 
+            <h1 id='aboutParagraph'>
+                What is Catz? Catz is a website created by me, Rachel, who was inspired by other cat websites along with pet stores and breeder pages. 
+                I made this website to give info about cats, show cat products, and to be able to add your pet to show off to the world. I made this 
+                website club based so that you can sign up to view your cart and all products. I would like to think this is the cat version of the 
+                AKC but with more, or less, not really sure. I guess the real AKC version of cats is the CFA, but still mine is basically the 
+                same but with less functionality.
+            </h1>
+
             <h1 id='aboutQuestionsText'>Have Questions? Email us!<img id='aboutCat' src={cat}/></h1>
 
             <div id='email'>

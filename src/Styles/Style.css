@@ -520,6 +520,18 @@ img {
 }
 
 /* ABOUT */
+#aboutParagraph {
+  width: 100vw;
+  height: 88vh;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  font-size: 3vh;
+}
+
+
 #aboutCat {
   height: 5vh;
   width: 4vw;
