@@ -790,6 +790,9 @@ img {
 
 
   /* HOME */
+  #catCareText {
+    border-bottom: solid white 1px;
+  }
   #mobileHomePicture {
     width: 80vw;
     height: 30vh;
