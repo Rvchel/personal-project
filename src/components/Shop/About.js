@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import cat from '../../Styles/cat.png'
 import axios from 'axios';
 
 class About extends Component {
@@ -33,13 +34,15 @@ class About extends Component {
                 <div id='aboutHomeButton'><Link to='/'><button id='aboutHomeButton'>HOME</button></Link></div>
             </div>
 
+            <h1 id='aboutQuestionsText'>Have Questions? Email us!<img id='aboutCat' src={cat}/></h1>
+
             <div id='email'>
-                Name:
+                <h1 className='emailText'>Name:</h1>
                 <input name='name' value={this.state.name} onChange={this.handleChange} />
-                Subject:
+                <h1 className='emailText'>Subject:</h1>
                 <input name='subject' value={this.state.subject} onChange={this.handleChange} />
-                Text:
-                <input name='body' value={this.state.body} onChange={this.handleChange} />
+                <h1 className='emailText'>Text:</h1>
+                <input id='textAbout' name='body' value={this.state.body} onChange={this.handleChange} />
 
                 <button id='emailButton' onClick={this.sendEmail}>Send</button>
             </div>

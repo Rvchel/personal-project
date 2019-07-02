@@ -64,7 +64,7 @@ class Register extends Component {
                 <div style={{display: 'flex', marginBottom: 50}}>
                 <input style={{fontFamily: 'Poppins, sans-serif'}} placeholder='Username' onChange={this.handleUsername} /></div>
                 <div><input style={{fontFamily: 'Poppins, sans-serif'}} placeholder='Password' type='password' onChange={this.handlePassword} /></div>
-                <div><Link to='/login'><Button style={{fontFamily: 'Poppins, sans-serif'}} color="link">Already a User?</Button></Link></div>
+                <div><Button style={{fontFamily: 'Poppins, sans-serif'}} color="link">Already a User?</Button></div>
             </div>
             </ModalBody>
             <ModalFooter>

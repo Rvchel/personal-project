@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Redirect, Link} from 'react-router-dom';
 import axios from 'axios';
-//NEED TO FIX LOGIN PASSWORD
 
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
@@ -58,7 +57,7 @@ class Login extends Component {
             <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
             <Label for="exampleEmail" className="mr-sm-2">Email</Label>
             <input type="Username" name="Username" id="exampleEmail" placeholder="Username" onChange={this.handleUsername}  />
-            </FormGroup>
+            </FormGroup> 
             <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
             <Label for="examplePassword" className="mr-sm-2">Password</Label>
             <input placeholder="Password" type='password' onChange={this.handlePassword} />

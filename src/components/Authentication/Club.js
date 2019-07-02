@@ -109,7 +109,7 @@ class Club extends Component {
             <div style={{marginLeft: 150}}>
                 <div style={{display: 'flex', marginBottom: 50}}>
                 <input style={{fontFamily: 'Poppins, sans-serif'}} placeholder='Username' onChange={this.handleUsername} /></div>
-                <div><input style={{fontFamily: 'Poppins, sans-serif'}} placeholder='Password' onChange={this.handlePassword} /></div>
+                <div><input style={{fontFamily: 'Poppins, sans-serif'}} placeholder='Password' type='password' onChange={this.handlePassword} /></div>
                 <div><Link to='/register'><Button style={{fontFamily: 'Poppins, sans-serif'}} color="link">New User?</Button></Link></div>
             </div>
             </ModalBody>

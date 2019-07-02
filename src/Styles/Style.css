@@ -30,6 +30,7 @@ body {
   margin-left: 70vw;
   margin-top: 10vh;
   font-family: 'Poppins', sans-serif;
+  outline: none;
 }
 
 .homeButton {
@@ -37,6 +38,7 @@ body {
   background: transparent;
   border: none;
   font-family: 'Poppins', sans-serif;
+  outline: none;
 }
 
 .homeButton:hover {
@@ -191,6 +193,7 @@ img {
   border: none;
   margin-left: 10px;
   margin-top: 20px; 
+  outline: none;
 }
 
 #galleryHomeButton:hover {
@@ -232,6 +235,7 @@ img {
   border: none;
   margin-left: 10px;
   margin-top: 10px; 
+  outline: none;
 }
 
 #clubHomeButton:hover {
@@ -509,10 +513,32 @@ img {
 }
 
 /* ABOUT */
+#aboutCat {
+  height: 5vh;
+  width: 4vw;
+  margin-left: 18vw;
+  margin-top: -4vh;
+}
+
+#aboutQuestionsText {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  margin-left: 38vw;
+}
+
+#textAbout {
+  height: 30vh;
+}
+
+.emailText {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
 #email {
   display: flex;
   flex-direction: column;
-  margin-top: 20vh;
+  margin-top: 40vh;
   width: 50vw;
   margin-left: 25vw;
 }
@@ -523,6 +549,7 @@ img {
   color: white;
   font-family: 'Poppins', sans-serif;
   margin-top: 2vh;
+  outline: none;
 }
 
 #aboutCatz {
@@ -557,6 +584,14 @@ img {
 /* RESPONSIVENESS */
 @media (max-width: 900px) {
   /* ABOUT */
+  #aboutCat {
+    margin-left: 55vw;
+    width: 10vw;
+  }
+  #aboutQuestionsText {
+    margin-top: 2vh;
+    margin-left: 18vw;
+  }
   #email {
     display: flex;
     flex-direction: column;
