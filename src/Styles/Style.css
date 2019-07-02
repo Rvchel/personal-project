@@ -784,6 +784,24 @@ img {
   
 
   /* DASHBOARD */
+  #foodButton {
+    border: none;
+    padding-right: 10vw;
+    padding-left: 10vw;
+  }
+  #allButton {
+    border: none;
+  }
+  #toysButton {
+    border: none;
+    margin-top: -5vh;
+  }
+  #filterButtons {
+    margin-left: 7vw;
+    margin-top: -110vh;
+    display: flex;
+    flex-direction: row;
+  }
   #addToCart {
     position: absolute;
     margin-left: 20vw;
@@ -803,7 +821,7 @@ img {
     display: flex;
     flex-flow: column;
     margin-left: 20vw;
-    margin-top: 50vh;
+    margin-top: 90vh;
   }
   .productImage {
     height: 10vh;
