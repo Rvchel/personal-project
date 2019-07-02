@@ -31,11 +31,17 @@ class Dashboard extends Component {
     }
 
     foodProducts() {
-        axios.get('api/products/filter?type=food')
-        .then(response => {
-            console.log(response.data)
-            this.setState({products: response.data})
+        let food = this.state.products.filter(product => {
+            return product.category === 'food'
         })
+        this.setState({products: food})
+    }
+
+    toyProducts() {
+        let toys = this.state.products.filter(product => {
+            return product.category === 'toys'
+        })
+        this.setState({products: toys})
     }
 
 
@@ -52,8 +58,6 @@ class Dashboard extends Component {
                     <div id='cartButton'><Link to='/cart'><img id='cartIcon' src={cart}/></Link></div>
                 </div>
 
-                {/* <button onClick={() => this.foodProducts()}>Category</button> */}
-
                 <div>
                 <div>
                 <div id='productContainer'>{this.state.products.map((products, index)=> (
@@ -66,6 +70,13 @@ class Dashboard extends Component {
                     id={products.id} />
 
                 ))}</div> </div> </div>
+
+                {/* NEED TO FIX FILTER */}
+                <div id='filterButtons'>
+                    <button id='allButton' onClick={() => this.getProducts()}>All</button>
+                    <button id='foodButton' onClick={() => this.foodProducts('food')}>Food</button>
+                    <button id='toysButton' onClick={() => this.toyProducts('toys')}>Toys</button>
+                </div>
 
             </div>
         )

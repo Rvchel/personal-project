@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const massive = require('massive');
 const session = require('express-session');
-const {getProducts, getProductCategory} = require('./controllers/productsController');
+const {getProducts, getFood} = require('./controllers/productsController');
 const {registerUser, loginUser, getUser, logoutUser} = require('./controllers/authController');
 const {addToCart, removeFromCart} = require('./controllers/cartController');
 const {editCat, deleteCat, addCat, getCat} = require('./controllers/catController');
@@ -32,7 +32,7 @@ app.use(session({
 
 //product endpoints
 app.get('/api/products', getProducts);
-app.get('api/products/filter', getProductCategory);
+// app.get('/api/products/food', getFood); 
 
 //cart
 app.post('/api/cart/:product', addToCart);

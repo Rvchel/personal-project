@@ -348,6 +348,45 @@ img {
 }
 
 /* DASHBOARD */
+#toysButton {
+  font-family: 'Poppins', sans-serif;
+  background-color: transparent;
+  border: none;
+  color: white;
+  border-bottom: solid white 1px;
+}
+
+#foodButton {
+  margin-bottom: 5vh;
+  font-family: 'Poppins', sans-serif;
+  background-color: transparent;
+  border: none;
+  color: white;
+  border-bottom: solid white 1px;
+}
+
+#allButton {
+  margin-bottom: 5vh;
+  font-family: 'Poppins', sans-serif;
+  background-color: transparent;
+  border: none;
+  color: white;
+  border-bottom: solid white 1px;
+}
+
+#filterButtons {
+  width: 10vw;
+  margin-left: -15vw;
+  display: flex;
+  flex-direction: column;
+  margin-top: -10vh;
+  font-family: 'Poppins', sans-serif;
+  background-color: transparent;
+  border: none;
+  color: white;
+
+}
+
 #cartIcon {
   height: 8vh;
   width: 5vw;
@@ -365,7 +404,7 @@ img {
   color: white;
   margin-left: 20vw;
   border-left: solid white 1px;
-  height: 100vh;
+  height: 200vh;
 }
 
 #dashMainButtons {
