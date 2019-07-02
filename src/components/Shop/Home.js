@@ -46,7 +46,7 @@ class Home extends Component {
 
                 <div id='carouselBorder'>
                 <div id='carouselContainer'><Example /></div>
-                <img id='mobileHomePicture' src={'https://images.pexels.com/photos/1774341/pexels-photo-1774341.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'} />
+                <img id='mobileHomePicture' src={'https://scontent-lhr3-1.cdninstagram.com/vp/01e3c2e6d6af3bad1b6c7a4243c88cb0/5DC34FBD/t51.2885-15/fr/e15/s1080x1080/53355977_294102991283141_552910091255451140_n.jpg?_nc_ht=scontent-lhr3-1.cdninstagram.com&ig_cache_key=MjAwNDU3MzI0NTc3MjM0NDQyMA%3D%3D.2'} />
                 </div>
 
         <Link to='/catCare'><button id='catCareText'>CAT CARE ADVICE</button></Link>
