@@ -33,16 +33,16 @@ class catCare extends Component {
 
             </div>
 
-        <h1 className='catCareTitles'>Essential Items For New Cat Owners.</h1>
+        <h1 className='catCareTitles'>Cat Adoption Checklist.</h1>
             <div className='catCareInfo'>
                 <img className='catCareImages' src={'https://images.pexels.com/photos/2401994/pexels-photo-2401994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'} />
 
                 <ol>
-                    <li>Good reputable food.</li>
-                    <li>Food bowls.</li>
+                    <li>Do you have any other pets and how will they react to a new cat?</li>
+                    <li>How will your social life or work obligations affect your ability to care for a cat?</li>
                     <li>Cat toys.</li>
-                    <li>Litter box.</li>
-                    <li>Reputable litter.</li>
+                    <li>How do the people you live with feel about having a cat in the house?</li>
+                    <li>Do you or any of your household/family members have health issues that may be affected by a cat?</li>
                 </ol>
 
             </div>
