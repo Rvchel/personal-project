@@ -10,12 +10,12 @@
 
     const items = [
     {
-        src: 'https://images.pexels.com/photos/1395318/pexels-photo-1395318.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+        src: 'https://images.pexels.com/photos/384555/pexels-photo-384555.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
         // altText: 'Slide 1',
         // caption: 'Slide 1'
     },
     {
-        src: 'https://images.pexels.com/photos/549237/pexels-photo-549237.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+        src: 'https://images.pexels.com/photos/1262939/pexels-photo-1262939.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
         // altText: 'Slide 2',
         // caption: 'Slide 2'
     },
