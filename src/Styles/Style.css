@@ -138,6 +138,10 @@ img {
 }
 
 /* HOME */
+#mobileHomePicture {
+  display: none;
+}
+
 #catCareText {
   background-color: transparent;
   border: none;
@@ -786,6 +790,13 @@ img {
 
 
   /* HOME */
+  #mobileHomePicture {
+    width: 80vw;
+    height: 30vh;
+    display: flex;
+    margin-left: 10vw;
+    margin-top: 2vh;
+  }
   #friendText {
     font-size: 5vw;
     margin-left: 4vw;
