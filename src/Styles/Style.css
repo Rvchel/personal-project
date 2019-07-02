@@ -28,7 +28,7 @@ body {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   margin-left: 70vw;
-  margin-top: 10vh;
+  margin-top: 9vh;
   font-family: 'Poppins', sans-serif;
   outline: none;
 }
@@ -139,7 +139,10 @@ img {
 
 /* HOME */
 #catCareText {
+  background-color: transparent;
+  border: none;
   color: white;
+  outline: none;
   font-family: 'NTR', sans-serif;
   font-size: 4vh;
   margin-top: 5vh;
@@ -579,10 +582,73 @@ img {
     font-family: 'Pacifico', cursive;
 }
 
+/* CATCARE */
+.catCareTitles {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 10vh;
+  margin-left: 40vw;
+  font-size: 5vh;
+  font-weight: bold;
+}
+
+.catCareInfo {
+  display: flex;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  line-height: normal;
+}
+
+.catCareImages {
+  max-width: 30vw;
+  height: 40vh;
+}
+
+#careHomeButton {
+  color: rgb(95, 89, 89);
+  font-family: 'Poppins', sans-serif;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin-left: 1vw;
+  margin-top: 3vh; 
+}
+
+#careHomeButton:hover {
+  color: white;
+}
+
+#catzCare {
+  color: white;
+  font-family: 'Pacifico', cursive;
+  font-size: 50px;
+  border-right: solid rgb(56, 52, 52) 1px;
+  padding-right: 40px;
+}
+
+#catCareContainer {
+  display: flex;
+}
+
 /* #√  */
 
 /* RESPONSIVENESS */
 @media (max-width: 900px) {
+  /* CATCARE */
+  .catCareTitles {
+    font-size: 3vh;
+    margin-left: 10vw;
+  }
+  .catCareInfo {
+    display: flex;
+    flex-direction: column;
+  }
+  .catCareImages {
+    max-width: 100vw;
+    margin-left: 10vw;
+  }
+
+
   /* ABOUT */
   #aboutCat {
     margin-left: 55vw;

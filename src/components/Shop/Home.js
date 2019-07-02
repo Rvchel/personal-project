@@ -34,8 +34,6 @@ class Home extends Component {
                 <Link to='/club'><button id='catClubButton' className='homeButton'>CAT CLUB</button></Link>
                 </div>
 
-                {/* RESPONSIVE MENU NEEDS WORK */}
-                {/* <img className='openMenu' src={burgerMenu1} /> */}
 
                 <div id='mainButtons'>
                 <Link to='/dashboard'><button className='homeButton'>PRODUCTS</button></Link>
@@ -50,7 +48,7 @@ class Home extends Component {
                 <div id='carouselContainer'><Example /></div>
                 </div>
 
-        <div id='catCareText'>CAT CARE ADVICE</div>
+        <Link to='/catCare'><button id='catCareText'>CAT CARE ADVICE</button></Link>
             <div id='whiteDivContainer'>
                 <div className='whiteDiv'><img className='catCareImage' src={image1} />
                 <h1 className='hoverText'>POPCORN</h1></div>

@@ -10,6 +10,7 @@ import Gallery from './components/Shop/Gallery';
 import Form from './components/Shop/Form';
 import Admin from './components/Authentication/Admin';
 import About from './components/Shop/About';
+import catCare from './components/Shop/catCare';
 
 export default (
     <Switch>
@@ -22,5 +23,6 @@ export default (
         <Route path={'/gallery'} component={Gallery} />
         <Route path={'/admin'} component={Admin} />
         <Route path={'/about'} component={About} />
+        <Route path={'/catCare'} component={catCare} />
     </Switch>
 );
