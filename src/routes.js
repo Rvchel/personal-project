@@ -11,6 +11,7 @@ import Form from './components/Shop/Form';
 import Admin from './components/Authentication/Admin';
 import About from './components/Shop/About';
 import catCare from './components/Shop/catCare';
+import Breeds from './components/Shop/Breeds';
 
 export default (
     <Switch>
@@ -24,5 +25,6 @@ export default (
         <Route path={'/admin'} component={Admin} />
         <Route path={'/about'} component={About} />
         <Route path={'/catCare'} component={catCare} />
+        <Route path={'/breeds'} component={Breeds} />
     </Switch>
 );
