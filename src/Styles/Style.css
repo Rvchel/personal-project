@@ -768,9 +768,11 @@ img {
     flex-direction: column;
   }
   .catCareImages {
-    width: 100vw;
-    position: absolute;
-    right: 50vw;
+    width: 60vw;
+    height: 20vh;
+    margin-left: 30vw;
+    /* position: absolute; */
+    /* right: 50vw; */
   }
 
 
